@@ -1,2 +1,6 @@
-﻿/.vs
-/DADS/.vs/DADS/v15/Server/sqlite3/db.lock
+################################
+# Ignore Visual Studio settings
+################################
+
+/.vs
+/DADS/.vs
