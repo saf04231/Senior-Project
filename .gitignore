@@ -1,5 +1,2 @@
-
-.vs/slnx.sqlite
-.vs/Senior-Project/v15/.suo
-.vs/VSWorkspaceState.json
-DADS/.vs/DADS/v15/Server/sqlite3/db.lock
+﻿/.vs
+/DADS/.vs/DADS/v15/Server/sqlite3/db.lock
