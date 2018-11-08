@@ -1,0 +1,8 @@
+
+################################
+# Ignore Visual Studio settings
+################################
+
+/.vs
+/DADS/.vs
+/DADS/packages
