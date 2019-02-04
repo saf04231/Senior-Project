@@ -3,5 +3,7 @@ Environment Setup.
 
 Resources
 	MVS tutorial: https://docs.microsoft.com/en-us/aspnet/mvc/overview/getting-started/introduction/getting-started
+	Connect to external DB: https://docs.microsoft.com/en-us/ef/core/get-started/aspnetcore/existing-db
+	Byte[] to image conversion: https://stackoverflow.com/questions/13320501/how-to-convert-byte-to-image-in-asp-net
 	
 TODO
