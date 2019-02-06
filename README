@@ -3,5 +3,28 @@ Environment Setup.
 
 Resources
 	MVS tutorial: https://docs.microsoft.com/en-us/aspnet/mvc/overview/getting-started/introduction/getting-started
-	
-TODO
+	Connect to external DB: https://docs.microsoft.com/en-us/ef/core/get-started/aspnetcore/existing-db
+	Byte[] to image conversion: https://stackoverflow.com/questions/13320501/how-to-convert-byte-to-image-in-asp-net
+
+
+View folder layout:	v> Views; p> Partial Views; c> View Components 
+	Home: 
+		v> Index
+		c> Login
+		c> Signup
+		c> News
+	Game: 
+		v> Index 
+		p> Map
+		p> Chat
+		p> Character Sheet
+		v> Actors
+	User: 
+		v> Index 
+		c> DM Games
+		c> Player Games
+		c> Characters 
+		v> New Game
+		v> New Char
+	Settings: 
+		v> Index
