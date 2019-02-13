@@ -20,6 +20,11 @@ namespace DADS.Controllers
             return View();
         }
 
+        public ActionResult GameView()
+        {
+            return View();
+        }
+
         public ActionResult Map()
         {
             return View();

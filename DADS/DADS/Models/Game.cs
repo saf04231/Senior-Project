@@ -21,7 +21,7 @@ namespace DADS.Models
         public string Name { get; set; }
         public string Description { get; set; }
         public ICollection<Item> Inventory { get; set; }
-        public ICollection<int> Stats { get; set; } //stats cooresponding to possition in code design
+        public ICollection<int> Stats { get; set; } //stats cooresponding to position in code design
         public string Notes { get; set; }
     }
 
