@@ -1,6 +1,5 @@
 <!-- This is the page that will contain tabs for the CharacterSheet, Map, Chat, and Actors tab--depending on whether or not user is
     a DM.-->
-
 <ul class="nav nav-tabs">
     <li class="active">
         <a href="#map" data-toggle="tab">Map</a>
@@ -12,16 +11,16 @@
         <a href="#chat" data-toggle="tab">Chat</a>
     </li>
     <li>
-        <a href="#actors" data-toggle="tab">Chat</a>
+        <a href="#actors" data-toggle="tab">Actors</a>
     </li>
 </ul>
 
 <div class="tab-content">
     <div class="tab-pane fade active" id="map">
-        <p>Placeholder text. Map goes here.</p>
+        @Html.Partial("_Map");
     </div>
     <div class="tab-pane fade" id="characterSheet">
-        <p>Placeholder text. Character sheet goes here.</p>
+        @Html.Partial("_CharacterSheet");
     </div>
     <div class="tab-pane fade" id="chat">
         <p>Placeholder text. Chat goes here.</p>

@@ -200,13 +200,13 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Game\GameView.cshtml" />
     <Content Include="Views\Game\Actors.cshtml" />
-    <Content Include="Views\Game\Map.cshtml" />
+    <Content Include="Views\Game\_Map.cshtml" />
     <Content Include="Views\Game\Chat.cshtml" />
-    <Content Include="Views\Game\CharacterSheet.cshtml" />
     <Content Include="Views\Settings\Index.cshtml" />
     <Content Include="Views\User\NewCharacter.cshtml" />
     <Content Include="Views\User\NewGame.cshtml" />
     <Content Include="Views\User\User.cshtml" />
+    <Content Include="Views\Game\_CharacterSheet.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
