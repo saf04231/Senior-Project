@@ -199,9 +199,9 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Game\GameView.cshtml" />
-    <Content Include="Views\Game\Actors.cshtml" />
+    <Content Include="Views\Game\_Actors.cshtml" />
     <Content Include="Views\Game\_Map.cshtml" />
-    <Content Include="Views\Game\Chat.cshtml" />
+    <Content Include="Views\Game\_Chat.cshtml" />
     <Content Include="Views\Settings\Index.cshtml" />
     <Content Include="Views\User\NewCharacter.cshtml" />
     <Content Include="Views\User\NewGame.cshtml" />
