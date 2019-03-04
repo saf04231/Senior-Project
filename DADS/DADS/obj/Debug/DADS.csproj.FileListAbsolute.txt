@@ -271,3 +271,7 @@ C:\Users\michael\Source\Repos\Senior-Project\DADS\DADS\obj\Debug\DADS.csproj.Cor
 C:\Users\michael\Source\Repos\Senior-Project\DADS\DADS\obj\Debug\DADS.csproj.CopyComplete
 C:\Users\michael\Source\Repos\Senior-Project\DADS\DADS\obj\Debug\DADS.dll
 C:\Users\michael\Source\Repos\Senior-Project\DADS\DADS\obj\Debug\DADS.pdb
+C:\Users\michael\source\repos\Senior-Project\DADS\DADS\bin\EntityFramework.dll
+C:\Users\michael\source\repos\Senior-Project\DADS\DADS\bin\EntityFramework.SqlServer.dll
+C:\Users\michael\source\repos\Senior-Project\DADS\DADS\bin\EntityFramework.xml
+C:\Users\michael\source\repos\Senior-Project\DADS\DADS\bin\EntityFramework.SqlServer.xml

@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Data.Entity;
 
 namespace DADS.Models
 {
@@ -39,5 +40,12 @@ namespace DADS.Models
         public int Damage { get; set; }
         public string Description { get; set; }
         public ICollection<string> Types { get; set; } //i.e. peircing, melee 
+    }
+
+    public class GameDBContext : DbContext
+    {
+        public DbSet<Game> Games { get; set; }
+        public DbSet<GameMap> Maps { get; set; }
+        public DbSet<GameChar> Chars { get; set; }
     }
 }

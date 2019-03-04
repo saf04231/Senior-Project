@@ -45,6 +45,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -183,6 +189,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\mapCanvas.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -200,13 +207,13 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Game\GameView.cshtml" />
     <Content Include="Views\Game\_Actors.cshtml" />
-    <Content Include="Views\Game\_Map.cshtml" />
     <Content Include="Views\Game\_Chat.cshtml" />
     <Content Include="Views\Settings\Index.cshtml" />
     <Content Include="Views\User\NewCharacter.cshtml" />
     <Content Include="Views\User\NewGame.cshtml" />
     <Content Include="Views\User\User.cshtml" />
     <Content Include="Views\Game\_CharacterSheet.cshtml" />
+    <Content Include="Views\Game\_Map.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
