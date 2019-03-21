@@ -1,4 +1,4 @@
-﻿var canvas = document.getElementById("map");
+﻿var canvas = document.getElementById("mapCanvas");
 var ctx = map.getContext("2");
 
 ctx.fillStyle = "#FF0000";
