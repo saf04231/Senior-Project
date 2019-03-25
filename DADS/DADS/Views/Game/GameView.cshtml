@@ -1,52 +1,49 @@
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
 <div class="row">
-    <div id="map" class="col">
-        <script type="text/javascript">
-            var canvasDiv = document.getElementById('map');
-            var canvas = document.createElement('canvas');
-
-            canvas.setAttribute("height", 300);
-            canvas.setAttribute("width", 400);
-
-            canvas.setAttribute('style', "border:1px black solid");
-            canvas.setAttribute('id', "canvas");
-            canvasDiv.appendChild(canvas);
-            if (typeof G_vmlCanvasManager != 'undefined') {
-                canvas = G_vmlCanvasManager.initElement(canvas);
-            }
-            ctx = canvas.getContext("2d");
-
-            ctx.fillStyle = "#FF0000";
-            ctx.fillRect(0, 0, 150, 75);
-        </script>
+    <div class="col">
+        <div id="map">
+        </div>
     </div>
+
+    <script type="text/javascript">
+        var canvasDiv = document.getElementById('map');
+        var canvas = document.createElement('canvas');
+
+        canvas.setAttribute("height", canvasDiv.offsetWidth/2);
+        canvas.setAttribute("width", canvasDiv.offsetWidth/2);
+
+        canvas.setAttribute('style', "border:1px black solid");
+        canvas.setAttribute('id', "canvas");
+        canvasDiv.appendChild(canvas);
+        if (typeof G_vmlCanvasManager != 'undefined') {
+            canvas = G_vmlCanvasManager.initElement(canvas);
+        }
+        ctx = canvas.getContext("2d");
+
+        ctx.fillStyle = "#FF0000";
+        ctx.fillRect(0, 0, 150, 75);
+    </script>
 
     <div class="col">
-        <ul class="nav nav-tabs" role="tablist">
+        <ul class="nav nav-tabs nav-justified" role="tablist">
             <li class="nav-item active">
-                <a class="nav-link" href="#characterSheet" data-toggle="tab" role="tab">Character Sheet</a>
+                <a class="nav-link" href="#characterSheetPanel" data-toggle="tab" role="tab">Character Sheet</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#chat" data-toggle="tab" role="tab">Chat</a>
+                <a class="nav-link" href="#chatPanel" data-toggle="tab" role="tab">Chat</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#actors" data-toggle="tab" role="tab">Actors</a>
+                <a class="nav-link" href="#actorPanel" data-toggle="tab" role="tab">Actors</a>
             </li>
         </ul>
-    </div>
 
-    <div class="tab-content" id="sidebarContent">
-        <div class="tab-pane fade in show active" role="tabpanel" id="characterSheet">
-            Character Sheet
-        </div>
-        <div class="tab-pane fade" role="tabpanel" id="chat">
-            Chat
-        </div>
-        <div class="tab-pane fade" role="tabpanel" id="actors">
-            Actors
+        <div class="tab-content" id="tabContent">
+            <div class="tab-pane fade show active" id="characterSheetPanel" role="tabpanel" aria-labelledby="cs-tab">Character Sheet</div>
+            <div class="tab-pane fade" id="actorPanel" role="tabpanel" aria-labelledby="actor-tab">Actors</div>
+            <div class="tab-pane fade" id="chatPanel" role="tabpanel" aria-labelledby="chat-tab">Chat</div>
         </div>
     </div>
 </div>
+
