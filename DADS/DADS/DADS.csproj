@@ -159,6 +159,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\DBConnection.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\Game.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -290,7 +291,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>50129</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:4250/</IISUrl>
+          <IISUrl>http://localhost:4250</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
