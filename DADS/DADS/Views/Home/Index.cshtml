@@ -2,6 +2,7 @@
     ViewBag.Title = "0HP Home";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+    @using DADS.Models
 
 <div class="main-body">
     <div class="row">
@@ -13,10 +14,10 @@
             <p>Donec lacinia dignissim sem, at placerat ipsum eleifend non. Duis arcu dolor, cursus sit amet molestie a, consequat et nibh. Integer a lacinia turpis. Fusce consequat massa a sem tempor, eu dignissim ipsum egestas. Pellentesque consectetur at elit non congue. Nunc metus urna, mollis et magna at, tincidunt luctus ligula. Nunc in ipsum at lacus sagittis mollis sit amet consectetur ex. Proin facilisis sapien et felis cursus vehicula. Donec quis turpis gravida mi gravida faucibus. Integer euismod arcu augue, a iaculis lectus posuere sit amet. Aliquam facilisis, augue vel rhoncus vestibulum, dui leo euismod nibh, at lacinia quam orci sit amet quam.</p>
         </div>
         <div class="col-md-3">
-                <form>
-                    <div class="login">
+            <form>
+                <div class="login">
                     <h3>Login!</h3>
-                    <small id="welcomeBack" class="text-muted" >Welcome back!</small>
+                    <small id="welcomeBack" class="text-muted">Welcome back!</small>
                     <div class="form-group">
                         <input type="text" class="form-control" id="username" aria-describedby="emailHelp" placeholder="Enter username" />
                     </div>
@@ -24,10 +25,11 @@
                         <input type="password" class="form-control" id="password" placeholder="Enter password" />
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary" id="loginSubmit">Submit</button>
+                        @Html.ActionLink("submit", "Login", new { id = "loginSubmit" }, new { @class = "btn btn-primary" })
+                        <button type="submit" class="btn btn-primary" id="loginSubmit" onclick="@{DBConnection.Connect();}">Submit</button>
                     </div>
-                    </div>
-                </form>
+                </div>
+            </form>
             <hr />
             <form>
                 <div class="sign-up">
