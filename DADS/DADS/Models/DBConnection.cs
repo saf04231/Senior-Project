@@ -15,14 +15,14 @@ namespace DADS.Models
         private static SqlConnection connection;
 
 
-        private void Connect()
+        public static void Connect()
         {
             try
             {
                 builder.DataSource = "zerohp.database.windows.net";
-                builder.UserID = "root";
-                builder.Password = "";
-                builder.InitialCatalog = "mydb";
+                builder.UserID = "zero";
+                builder.Password = "BV7Kg2D&2S&m2P#g";
+                builder.InitialCatalog = "zerohp";
                 connection = new SqlConnection(builder.ConnectionString);
 
                 connection.Open();
