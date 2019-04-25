@@ -89,6 +89,8 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Management" />
     <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -156,13 +158,40 @@
     <Compile Include="Controllers\ServerController.cs" />
     <Compile Include="Controllers\SettingsController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="games.cs">
+      <DependentUpon>ZeroHP_DB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\DBConnection.cs" />
-    <Compile Include="Models\User.cs" />
-    <Compile Include="Models\Game.cs" />
+    <Compile Include="items.cs">
+      <DependentUpon>ZeroHP_DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="maps.cs">
+      <DependentUpon>ZeroHP_DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="player_sheets.cs">
+      <DependentUpon>ZeroHP_DB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="users.cs">
+      <DependentUpon>ZeroHP_DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ZeroHP_DB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ZeroHP_DB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ZeroHP_DB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ZeroHP_DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ZeroHP_DB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ZeroHP_DB.edmx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-grid.css" />
@@ -200,6 +229,17 @@
     <Content Include="Scripts\esm\popper.js.map" />
     <Content Include="Scripts\esm\popper-utils.min.js.map" />
     <Content Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="ZeroHP_DB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ZeroHP_DB.Context.cs</LastGenOutput>
+      <DependentUpon>ZeroHP_DB.edmx</DependentUpon>
+    </Content>
+    <Content Include="ZeroHP_DB.edmx.sql" />
+    <Content Include="ZeroHP_DB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ZeroHP_DB.cs</LastGenOutput>
+      <DependentUpon>ZeroHP_DB.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -252,9 +292,17 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <EntityDeploy Include="ZeroHP_DB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ZeroHP_DB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="ZeroHP_DB.edmx.diagram">
+      <DependentUpon>ZeroHP_DB.edmx</DependentUpon>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
     <Folder Include="Views\DMGamesViewComponent\" />
   </ItemGroup>
   <ItemGroup>
@@ -268,6 +316,7 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />

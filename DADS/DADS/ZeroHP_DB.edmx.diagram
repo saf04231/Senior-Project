@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d81866a409ce42278439687918211a1c" Name="Diagram1" >
+        <EntityTypeShape EntityType="ZeroHP_DB.users" Width="1.5" PointX="0.625" PointY="1.5" />
+        <EntityTypeShape EntityType="ZeroHP_DB.games" Width="1.5" PointX="3.375" PointY="0.5" />
+        <EntityTypeShape EntityType="ZeroHP_DB.player_sheets" Width="1.5" PointX="3.375" PointY="3.75" />
+        <EntityTypeShape EntityType="ZeroHP_DB.maps" Width="1.5" PointX="5.625" PointY="0.5" />
+        <EntityTypeShape EntityType="ZeroHP_DB.items" Width="1.5" PointX="5.625" PointY="3.75" />
+        <AssociationConnector Association="ZeroHP_DB.usersgames1" />
+        <AssociationConnector Association="ZeroHP_DB.usersplayer_sheets" />
+        <AssociationConnector Association="ZeroHP_DB.player_sheetsitems" />
+        <AssociationConnector Association="ZeroHP_DB.gamesplayer_sheets" />
+        <AssociationConnector Association="ZeroHP_DB.gamesmaps" />
+        <AssociationConnector Association="ZeroHP_DB.usersgames" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
