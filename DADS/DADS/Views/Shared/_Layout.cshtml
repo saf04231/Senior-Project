@@ -1,4 +1,4 @@
-﻿@{ bool loggedIn = false; }
+﻿@{ bool loggedIn = true; }
 
 <!DOCTYPE html>
 <html lang="en-gb">
@@ -22,7 +22,11 @@
                 <li class="nav-item">@Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link" })</li>
                 <li class="nav-item">@Html.ActionLink("About", "About", "Home", null, new { @class = "nav-link" })</li>
                 <li class="nav-item">@Html.ActionLink("Contact", "Contact", "Home", null, new { @class = "nav-link" })</li>
-                @if(loggedIn){<li class="nav-item">@Html.ActionLink("Game", "GameView", "Game", null, new { @class = "nav-link" })</li>}
+                @if (loggedIn)
+                {
+                    <li class="nav-item">@Html.ActionLink("Games List", "Index", "GamesList", null, new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("Game", "GameView", "Game", null, new { @class = "nav-link" })</li>
+                }
             </ul>
         </div>
     </nav>
