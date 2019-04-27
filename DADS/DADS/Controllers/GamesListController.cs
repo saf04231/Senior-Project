@@ -8,6 +8,17 @@ namespace DADS.Controllers
 {
     public class GamesListController : Controller
     {
+
+        public ActionResult AddChar()
+        {
+            return View();
+        }
+
+        public ActionResult AddGame()
+        {
+            return View();
+        }
+
         // GET: GamesList
         public ActionResult Index()
         {
