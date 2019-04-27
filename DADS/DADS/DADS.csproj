@@ -302,9 +302,6 @@
       <DependentUpon>ZeroHP_DB.edmx</DependentUpon>
     </Content>
     <Content Include="Views\GamesList\Index.cshtml" />
-    <Content Include="Views\GamesList\AddChar.cshtml" />
-    <Content Include="Views\GamesList\AddGame.cshtml" />
-    <Content Include="Views\GamesList\PlayerInvite.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
