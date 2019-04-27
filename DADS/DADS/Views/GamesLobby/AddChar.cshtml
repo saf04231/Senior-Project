@@ -7,9 +7,9 @@
 
 <div class="main-body">
 
-    @using (Html.BeginForm())
+    @using (Html.BeginForm("Create", "", FormMethod.Post))
     {
-        <div style="border-style: ; width: ">
+        <div>
             <table border="1" display: inline-table;">
                 <tr>
                     <td>Character Name</td>
@@ -21,34 +21,16 @@
                 </tr>
                 <tr>
                     <td>Experience Point</td>
-                    <td>@Html.EditorFor(model => model.player_sheets.stats[1], new { htmlAttributes = new { @class = "form-control" } })</td>
+                    <td>@Html.EditorFor(model => model.player_sheets.stats[0], new { htmlAttributes = new { @class = "form-control" } })</td>
                 </tr>
             </table>
         </div>
 
-
-        <div style="border-style: ; width: 350px">
+        <div style="width: 350px">
             <div style="padding: 5px 5px 5px 0px; display: inline-block">
                 <table border="1" style="display: inline-table;">
                     <tr>
                         <td>Accessible Items</td>
-                        <td>@Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })</td>
-                    </tr>
-                </table>
-            </div>
-
-            <div style="padding: 5px 5px 5px 0px; display: inline-block">
-                <table border="1" style="display: inline-table;">
-                    <tr>
-                        <td>Feat</td>
-                        <td>@Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })</td>
-                    </tr>
-                </table>
-            </div>
-            <div style="padding: 5px 5px 5px 0px; display: inline-block">
-                <table border="1" style="display: inline-table;">
-                    <tr>
-                        <td>Features</td>
                         <td>@Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })</td>
                     </tr>
                 </table>
@@ -59,19 +41,19 @@
             <table border="1" style="display: inline-table;">
                 <tr>
                     <td>CP</td>
-                    <td>@Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })</td>
+                    <td>@Html.EditorFor(model => model.player_sheets.stats[1], new { htmlAttributes = new { @class = "form-control" } })</td>
                 </tr>
                 <tr>
                     <td>SP</td>
-                    <td>@Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })</td>
+                    <td>@Html.EditorFor(model => model.player_sheets.stats[2], new { htmlAttributes = new { @class = "form-control" } })</td>
                 </tr>
                 <tr>
                     <td>GP</td>
-                    <td>@Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })</td>
+                    <td>@Html.EditorFor(model => model.player_sheets.stats[3], new { htmlAttributes = new { @class = "form-control" } })</td>
                 </tr>
                 <tr>
                     <td>PP</td>
-                    <td>@Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })</td>
+                    <td>@Html.EditorFor(model => model.player_sheets.stats[4], new { htmlAttributes = new { @class = "form-control" } })</td>
                 </tr>
             </table>
         </div>
@@ -99,75 +81,75 @@
             </tr>
             <tr>
                 <td>Inspiration</td>
-                <td>@Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })</td>
+                <td>@Html.EditorFor(model => model.player_sheets.stats[5], new { htmlAttributes = new { @class = "form-control" } })</td>
                 <td></td>
             </tr>
             <tr>
                 <td>Stength</td>
-                <td>@Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })</td>
+                <td>@Html.EditorFor(model => model.player_sheets.stats[6], new { htmlAttributes = new { @class = "form-control" } })</td>
                 <td>
-                    Saving Throws: @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })
-                    <br />Athletics: @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })
+                    Saving Throws: @Html.EditorFor(model => model.player_sheets.stats[7], new { htmlAttributes = new { @class = "form-control" } })
+                    <br />Athletics: @Html.EditorFor(model => model.player_sheets.stats[8], new { htmlAttributes = new { @class = "form-control" } })
                 </td>
             </tr>
             <tr>
                 <td>Dexterity</td>
-                <td>@Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })</td>
+                <td>@Html.EditorFor(model => model.player_sheets.stats[9], new { htmlAttributes = new { @class = "form-control" } })</td>
                 <td>
-                    Saving Throws: @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })
-                    <br />Acrobatics: @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })
-                    <br />Sleight of Hand: @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })
-                    <br />Stealth: @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })
+                    Saving Throws: @Html.EditorFor(model => model.player_sheets.stats[10], new { htmlAttributes = new { @class = "form-control" } })
+                    <br />Acrobatics: @Html.EditorFor(model => model.player_sheets.stats[11], new { htmlAttributes = new { @class = "form-control" } })
+                    <br />Sleight of Hand: @Html.EditorFor(model => model.player_sheets.stats[12], new { htmlAttributes = new { @class = "form-control" } })
+                    <br />Stealth: @Html.EditorFor(model => model.player_sheets.stats[13], new { htmlAttributes = new { @class = "form-control" } })
                 </td>
             </tr>
             <tr>
                 <td>Constitution</td>
-                <td>@Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })</td>
+                <td>@Html.EditorFor(model => model.player_sheets.stats[14], new { htmlAttributes = new { @class = "form-control" } })</td>
                 <td>
-                    Saving Throws: @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })
+                    Saving Throws: @Html.EditorFor(model => model.player_sheets.stats[15], new { htmlAttributes = new { @class = "form-control" } })
                 </td>
             </tr>
             <tr>
                 <td>Intelligence</td>
-                <td>@Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })</td>
+                <td>@Html.EditorFor(model => model.player_sheets.stats[16], new { htmlAttributes = new { @class = "form-control" } })</td>
                 <td>
-                    Saving Throws: @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })
-                    <br /> Arcana: @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })
-                    <br /> History: @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })
-                    <br /> Investigation: @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })
-                    <br /> Nature: @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })
-                    <br /> Religion: @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })
+                    Saving Throws: @Html.EditorFor(model => model.player_sheets.stats[17], new { htmlAttributes = new { @class = "form-control" } })
+                    <br /> Arcana: @Html.EditorFor(model => model.player_sheets.stats[18], new { htmlAttributes = new { @class = "form-control" } })
+                    <br /> History: @Html.EditorFor(model => model.player_sheets.stats[19], new { htmlAttributes = new { @class = "form-control" } })
+                    <br /> Investigation: @Html.EditorFor(model => model.player_sheets.stats[20], new { htmlAttributes = new { @class = "form-control" } })
+                    <br /> Nature: @Html.EditorFor(model => model.player_sheets.stats[21], new { htmlAttributes = new { @class = "form-control" } })
+                    <br /> Religion: @Html.EditorFor(model => model.player_sheets.stats[22], new { htmlAttributes = new { @class = "form-control" } })
                 </td>
             </tr>
             <tr>
                 <td>Wisdom</td>
-                <td>@Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })</td>
+                <td>@Html.EditorFor(model => model.player_sheets.stats[23], new { htmlAttributes = new { @class = "form-control" } })</td>
                 <td>
-                    Saving Throws: @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })
-                    <br />Animal Handling: @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })
-                    <br />Insight: @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })
-                    <br />Medicine: @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })
-                    <br />Perception: @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })
+                    Saving Throws: @Html.EditorFor(model => model.player_sheets.stats[24], new { htmlAttributes = new { @class = "form-control" } })
+                    <br />Animal Handling: @Html.EditorFor(model => model.player_sheets.stats[25], new { htmlAttributes = new { @class = "form-control" } })
+                    <br />Insight: @Html.EditorFor(model => model.player_sheets.stats[26], new { htmlAttributes = new { @class = "form-control" } })
+                    <br />Medicine: @Html.EditorFor(model => model.player_sheets.stats[27], new { htmlAttributes = new { @class = "form-control" } })
+                    <br />Perception: @Html.EditorFor(model => model.player_sheets.stats[28], new { htmlAttributes = new { @class = "form-control" } })
                 </td>
             </tr>
             <tr>
                 <td>Charisma</td>
-                <td>@Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })</td>
+                <td>@Html.EditorFor(model => model.player_sheets.stats[29], new { htmlAttributes = new { @class = "form-control" } })</td>
                 <td>
-                    Saving Throws:  @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })
-                    <br />Deception:  @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })
-                    <br />Intimidation:  @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })
-                    <br />Performance:  @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })
-                    <br />Persuasion:  @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })
+                    Saving Throws:  @Html.EditorFor(model => model.player_sheets.stats[30], new { htmlAttributes = new { @class = "form-control" } })
+                    <br />Deception:  @Html.EditorFor(model => model.player_sheets.stats[31], new { htmlAttributes = new { @class = "form-control" } })
+                    <br />Intimidation:  @Html.EditorFor(model => model.player_sheets.stats[32], new { htmlAttributes = new { @class = "form-control" } })
+                    <br />Performance:  @Html.EditorFor(model => model.player_sheets.stats[33], new { htmlAttributes = new { @class = "form-control" } })
+                    <br />Persuasion:  @Html.EditorFor(model => model.player_sheets.stats[34], new { htmlAttributes = new { @class = "form-control" } })
                 </td>
             </tr>
             <tr>
                 <td>Passive Wisdom (Perception)</td>
-                <td>@Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })</td>
+                <td>@Html.EditorFor(model => model.player_sheets.stats[35], new { htmlAttributes = new { @class = "form-control" } })</td>
                 <td><!--Nothing--></td>
             </tr>
         </table>
-        <div style="border-style: ; width: 350px">
+        <div style="width: 350px">
             <div style="padding: 5px 5px 5px 0px; display: inline-block">
                 <table border="1" style="display: inline-table;">
                     <tr><th colspan="2">Weapon 1</th></tr>
@@ -233,8 +215,9 @@
                 </table>
             </div>
         </div>
-        <!--@Html.ActionLink("Save Character!", "signUp", new { id = "signUpSubmit" }, new { @class = "btn btn-primary" }) -->
-        @Html.ActionLink("Save Character", "Index", "GamesList", null, new { @class = "btn btn-primary" })
+
+        <input type="submit" value="Save Character!" class="btn btn-primary" id="addChar" />
     }
 </div>
+
 
