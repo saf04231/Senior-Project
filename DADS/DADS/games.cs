@@ -12,7 +12,7 @@ namespace DADS
     using System;
     using System.Collections.Generic;
     
-    public class games
+    public partial class games
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public games()

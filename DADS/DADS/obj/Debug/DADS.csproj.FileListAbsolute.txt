@@ -304,3 +304,8 @@ C:\Users\sferl\Documents\GitHub\Senior-Project\DADS\DADS\bin\Microsoft.AI.PerfCo
 C:\Users\sferl\Documents\GitHub\Senior-Project\DADS\DADS\bin\Microsoft.AI.ServerTelemetryChannel.xml
 C:\Users\sferl\Documents\GitHub\Senior-Project\DADS\DADS\bin\Microsoft.ApplicationInsights.xml
 C:\Users\sferl\Documents\GitHub\Senior-Project\DADS\DADS\bin\Newtonsoft.Json.pdb
+C:\Users\sferl\Documents\GitHub\Senior-Project\DADS\DADS\bin\Microsoft.Owin.dll
+C:\Users\sferl\Documents\GitHub\Senior-Project\DADS\DADS\bin\Microsoft.Owin.Security.dll
+C:\Users\sferl\Documents\GitHub\Senior-Project\DADS\DADS\bin\Owin.dll
+C:\Users\sferl\Documents\GitHub\Senior-Project\DADS\DADS\bin\Microsoft.Owin.xml
+C:\Users\sferl\Documents\GitHub\Senior-Project\DADS\DADS\bin\Microsoft.Owin.Security.xml

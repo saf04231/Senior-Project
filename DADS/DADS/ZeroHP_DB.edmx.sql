@@ -21,7 +21,21 @@ GO
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
-
+IF OBJECT_ID('items','U') IS NOT NULL 
+	DROP TABLE items; 
+GO
+IF OBJECT_ID('maps','U') IS NOT NULL 
+	DROP TABLE maps; 
+GO
+IF OBJECT_ID('player_sheets','U') IS NOT NULL 
+	DROP TABLE player_sheets; 
+GO
+IF OBJECT_ID('games','U') IS NOT NULL 
+	DROP TABLE games; 
+GO
+IF OBJECT_ID('users','U') IS NOT NULL 
+	DROP TABLE users; 
+GO
 
 -- --------------------------------------------------
 -- Creating all tables
