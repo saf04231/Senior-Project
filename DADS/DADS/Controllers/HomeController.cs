@@ -1,7 +1,9 @@
-﻿using System.Web.Mvc;
+﻿using System.Net;
+using System.Web.Mvc;
 
 namespace DADS.Controllers
 {
+    [RequireHttps]
     public class HomeController : Controller
     {
         public ActionResult Index()
@@ -13,19 +15,42 @@ namespace DADS.Controllers
         {
             ViewBag.Message = "Your application description page.";
 
-            return View();
+            return View("About");
         }
 
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
 
-            return View();
+            return View("Contact");
         }
 
-        public ActionResult Login()
+        [HttpGet]
+
+        public ActionResult Login(users model)
         {
-            return View();
+            if(model == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            
+            return View("Index", User);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult SignUp()
+        {
+            users newuser = new users();
+
+
+            return View("Index", User);
+        }
+
+        [HttpGet]
+        public ActionResult GameList(users model)
+        {
+            return View("../Game/GameView");    //change to GameList when made
         }
     }
 }
