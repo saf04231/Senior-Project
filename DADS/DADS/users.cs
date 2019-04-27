@@ -10,9 +10,10 @@
 namespace DADS
 {
     using System;
+    using System.Collections;
     using System.Collections.Generic;
-    
-    public partial class users
+
+    public partial class users : IEnumerable<games>
     {
         public int Id { get; set; }
         public string username { get; set; }
@@ -22,5 +23,17 @@ namespace DADS
         public virtual games gameList { get; set; }
         public virtual player_sheets player_sheets { get; set; }
         public virtual games game { get; set; }
+
+        IEnumerator<games> IEnumerable<games>.GetEnumerator()
+        {
+            throw new NotImplementedException();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            throw new NotImplementedException();
+        }
     }
+
+
 }

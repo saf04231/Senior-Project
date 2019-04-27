@@ -1,9 +1,12 @@
-﻿<!DOCTYPE html>
+﻿@{ bool loggedIn = true; }
+
+<!DOCTYPE html>
 <html lang="en-gb">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>@ViewBag.Title - The Free Online Tabletop Simulator</title>
+    <!--<title>@ViewBag.Title - The Free Online Tabletop Simulator</title>-->
+    <title>Zero HP</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
@@ -16,19 +19,23 @@
         </button>
         <div class="navbar-collapse collapse" id="navbarSupportedContent">
             <ul class="nav navbar-nav mr-auto">
-                <li class="nav-item">@Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link"  })</li>
+                <li class="nav-item">@Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link" })</li>
                 <li class="nav-item">@Html.ActionLink("About", "About", "Home", null, new { @class = "nav-link" })</li>
                 <li class="nav-item">@Html.ActionLink("Contact", "Contact", "Home", null, new { @class = "nav-link" })</li>
-                <li class="nav-item">@Html.ActionLink("Game", "GameView", "Game", null, new { @class = "nav-link" })</li>
+                @if (loggedIn)
+                {
+                    <li class="nav-item">@Html.ActionLink("Games List", "Index", "GamesList", null, new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("Game", "GameView", "Game", null, new { @class = "nav-link" })</li>
+                }
             </ul>
         </div>
     </nav>
 
     <div class="container-fluid">
         @RenderBody()
-        <hr style="background: whitesmoke;"/>
+        <hr style="background: whitesmoke;" />
         <footer>
-            <p style="color: whitesmoke;">&copy; @DateTime.Now.Year - 0HP ASP.NET Application</p>
+            <p style="color: whitesmoke;">&copy; @DateTime.Now.Year - ZeroHP ASP.NET Application</p>
         </footer>
     </div>
     @Scripts.Render("~/bundles/bootstrap")
