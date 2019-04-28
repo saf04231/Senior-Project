@@ -17,12 +17,15 @@ namespace DADS
         public int Id { get; set; }
         public string name { get; set; }
         public string description { get; set; }
-        public string stats { get; set; }
+        public int[] stats { get; set; }
         public string spells { get; set; }
         public string notes { get; set; }
-    
+
+        public virtual items weapon1 { get; set; }
+        public virtual items weapon2 { get; set; }
+        public virtual items weapon3 { get; set; }
+
         public virtual users user { get; set; }
-        public virtual items items { get; set; }
         public virtual games games { get; set; }
     }
 }

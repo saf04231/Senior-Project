@@ -16,7 +16,7 @@ namespace DADS
     {
         public int Id { get; set; }
         public string name { get; set; }
-        public string damage { get; set; }
+        public int damage { get; set; }
         public string description { get; set; }
         public string types { get; set; }
     
