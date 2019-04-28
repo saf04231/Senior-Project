@@ -6,7 +6,7 @@
 }
 
 <div class="main-body">
-    @using (Html.BeginForm())
+    @using (Html.BeginForm("Create", "games", FormMethod.Post))
     {
         <table>
             <thead>
@@ -22,7 +22,7 @@
                 </tr>
                 <tr>
                     <td>description: </td>
-                    <td>@Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })</td>
+                    <td>@Html.EditorFor(model => model.description, new { htmlAttributes = new { @class = "form-control" } })</td>
                 </tr>
 
                 <tr>
