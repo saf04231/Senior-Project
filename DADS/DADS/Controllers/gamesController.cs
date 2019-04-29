@@ -41,22 +41,21 @@ namespace DADS.Controllers
         {
             return View();
         }
-
+        
         // POST: games/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create([Bind(Include = "Id,name,description")] games games)
         {
             if (ModelState.IsValid)
             {
                 db.games.Add(games);
                 await db.SaveChangesAsync();
-                return RedirectToAction("Index");
+                return RedirectToAction("../GamesLobby/Index");
             }
 
-            return View(games);
+            return View("../GamesLobby/Index");
         }
 
         // GET: games/Edit/5

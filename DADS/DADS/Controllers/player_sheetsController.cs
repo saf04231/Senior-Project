@@ -18,7 +18,7 @@ namespace DADS.Controllers
         // GET: player_sheets
         public async Task<ActionResult> Index()
         {
-            var player_sheets = db.player_sheets.Include(p => p.items);
+            var player_sheets = db.player_sheets;
             return View(await player_sheets.ToListAsync());
         }
 
@@ -48,7 +48,6 @@ namespace DADS.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create([Bind(Include = "Id,name,description,stats,spells,notes")] player_sheets player_sheets)
         {
             if (ModelState.IsValid)
@@ -58,8 +57,7 @@ namespace DADS.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.Id = new SelectList(db.items, "Id", "name", player_sheets.Id);
-            return View(player_sheets);
+            return View("../GamesLobby/Index");
         }
 
         // GET: player_sheets/Edit/5

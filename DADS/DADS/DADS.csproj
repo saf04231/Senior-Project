@@ -171,6 +171,7 @@
     <Compile Include="Startup.cs" />
     <Compile Include="Controllers\GameController.cs" />
     <Compile Include="Controllers\gamesController.cs" />
+    <Compile Include="Controllers\GamesLobbyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\itemsController.cs" />
     <Compile Include="Controllers\mapsController.cs" />
@@ -325,6 +326,9 @@
     <Content Include="Views\users\Details.cshtml" />
     <Content Include="Views\users\Edit.cshtml" />
     <Content Include="Views\users\Index.cshtml" />
+    <Content Include="Views\GamesLobby\AddChar.cshtml" />
+    <Content Include="Views\GamesLobby\Index.cshtml" />
+    <Content Include="Views\GamesLobby\AddGame.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

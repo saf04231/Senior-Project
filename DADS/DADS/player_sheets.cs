@@ -11,18 +11,41 @@ namespace DADS
 {
     using System;
     using System.Collections.Generic;
-    
+
     public partial class player_sheets
     {
         public int Id { get; set; }
         public string name { get; set; }
         public string description { get; set; }
-        public string stats { get; set; }
         public string spells { get; set; }
         public string notes { get; set; }
-    
+
+        public virtual items weapon1 { get; set; }
+        public virtual items weapon2 { get; set; }
+        public virtual items weapon3 { get; set; }
+
+        public virtual stats statslist { get; set; }
+
         public virtual users user { get; set; }
-        public virtual items items { get; set; }
         public virtual games games { get; set; }
+    }
+
+    public partial class stats
+    {
+        public int cp { get; set; }
+        public int sp { get; set; }
+        public int gp { get; set; }
+        public int pp { get; set; }
+        public int exp { get; set; }
+
+        public int proficiencyBonus { get; set; }
+
+        public int strength { get; set; }
+        public int dexterity { get; set; }
+        public int constitution { get; set; }
+        public int intelligence{ get; set; }
+        public int wisdom { get; set; }
+        public int charisma { get; set; }
+        public int passiveWisdom { get; set; }
     }
 }
