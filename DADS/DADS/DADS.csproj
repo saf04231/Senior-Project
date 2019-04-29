@@ -326,6 +326,7 @@
     <Content Include="Views\GamesLobby\Index.cshtml" />
     <Content Include="Views\GamesLobby\AddGame.cshtml" />
     <Content Include="Views\games\Index.cshtml" />
+    <Content Include="Views\player_sheets\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -333,7 +334,6 @@
     <Folder Include="Views\DMGamesViewComponent\" />
     <Folder Include="Views\items\" />
     <Folder Include="Views\maps\" />
-    <Folder Include="Views\player_sheets\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.min.css.map" />

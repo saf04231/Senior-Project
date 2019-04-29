@@ -38,7 +38,10 @@
         </ul>
 
         <div class="tab-content" id="tabContent">
-            <div class="tab-pane fade show active" id="characterSheetPanel" role="tabpanel" aria-labelledby="cs-tab">Character Sheet</div>
+            <div class="tab-pane fade show active" id="characterSheetPanel" role="tabpanel" aria-labelledby="cs-tab">
+                @*Character Sheet*@
+                @Html.Partial("../player_sheets/Edit")
+            </div>
             <div class="tab-pane fade" id="actorPanel" role="tabpanel" aria-labelledby="actor-tab">Actors</div>
             <div class="tab-pane fade" id="chatPanel" role="tabpanel" aria-labelledby="chat-tab">Chat</div>
         </div>
