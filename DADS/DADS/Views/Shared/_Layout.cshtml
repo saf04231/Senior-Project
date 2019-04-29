@@ -26,6 +26,8 @@
                 {
                     <li class="nav-item">@Html.ActionLink("Games List", "Index", "GamesLobby", null, new { @class = "nav-link" })</li>
                     <li class="nav-item">@Html.ActionLink("Game", "GameView", "Game", null, new { @class = "nav-link" })</li>
+                    <li class="nav-item">@User.Identity.Name</li>
+                    <li class="nav-item">@Html.ActionLink("Logout","Logout","users", null, new { @class = "nav-link" })</li>
                 }
             </ul>
         </div>

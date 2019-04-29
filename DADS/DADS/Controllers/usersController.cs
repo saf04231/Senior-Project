@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
@@ -17,9 +18,10 @@ namespace DADS.Controllers
         private ZeroHP_DBContainer db = new ZeroHP_DBContainer();
 
         // GET: users
+        [AllowAnonymous]
         public ActionResult Index()
         {
-            var users = db.users.Include(u => u.player_sheets).Include(u => u.game);
+            var users = db.users;
             return View(users.ToList());
         }
 
@@ -39,6 +41,7 @@ namespace DADS.Controllers
         }
 
         // GET: users/Create
+        [AllowAnonymous]
         public ActionResult Create()
         {
             ViewBag.Id = new SelectList(db.player_sheets, "Id", "name");
@@ -50,7 +53,7 @@ namespace DADS.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        [AllowAnonymous]
         public ActionResult Create([Bind(Include = "Id,username,email,password")] users users)
         {
             if (ModelState.IsValid)
@@ -66,7 +69,45 @@ namespace DADS.Controllers
             return View("../Home/Index");
         }
 
-        
+        [HttpPost]
+        public ActionResult Login(users model)
+        {
+            try
+            {
+                users user = db.users.Where(u => u.email == model.email && u.password == model.password).Single();
+            
+                if (user != null)
+                {
+                    var identity = new ClaimsIdentity(new[] {
+                        new Claim(ClaimTypes.Name, user.username),
+                        new Claim(ClaimTypes.Email, user.email)
+                    },
+                    "ApplicationCookie");
+
+                    var ctx = Request.GetOwinContext();
+                    var authManager = ctx.Authentication;
+
+                    authManager.SignIn(identity);
+                }
+            }
+            catch (Exception)
+            {
+                ViewBag.LoginError = "Username and/or Email is invalid.";
+            }
+            return RedirectToAction("Index", "Home");
+        }
+
+
+        public ActionResult LogOut()
+        {
+            var ctx = Request.GetOwinContext();
+            var authManager = ctx.Authentication;
+
+            authManager.SignOut("ApplicationCookie");
+            return RedirectToAction("Index", "Home");
+        }
+
+
 
         // GET: users/Edit/5
         public ActionResult Edit(int? id)

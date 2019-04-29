@@ -301,6 +301,10 @@ C:\Users\sferl\Documents\GitHub\Senior-Project\DADS\DADS\bin\Microsoft.Owin.Secu
 C:\Users\sferl\Documents\GitHub\Senior-Project\DADS\DADS\bin\Owin.dll
 C:\Users\sferl\Documents\GitHub\Senior-Project\DADS\DADS\bin\Microsoft.Owin.xml
 C:\Users\sferl\Documents\GitHub\Senior-Project\DADS\DADS\bin\Microsoft.Owin.Security.xml
+C:\Users\sferl\Documents\GitHub\Senior-Project\DADS\DADS\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\sferl\Documents\GitHub\Senior-Project\DADS\DADS\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\sferl\Documents\GitHub\Senior-Project\DADS\DADS\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\sferl\Documents\GitHub\Senior-Project\DADS\DADS\bin\Microsoft.Owin.Security.Cookies.xml
 C:\Users\Kazuhara\Documents\GitHub\Senior-Project\DADS\DADS\bin\Microsoft.Owin.dll
 C:\Users\Kazuhara\Documents\GitHub\Senior-Project\DADS\DADS\bin\Microsoft.Owin.Security.dll
 C:\Users\Kazuhara\Documents\GitHub\Senior-Project\DADS\DADS\bin\Owin.dll

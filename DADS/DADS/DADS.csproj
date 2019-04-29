@@ -81,8 +81,14 @@
     <Reference Include="Microsoft.Owin, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.4.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Owin.Security, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.Security.4.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.4.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -162,11 +168,11 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Startup.cs" />
     <Compile Include="Controllers\GameController.cs" />
     <Compile Include="Controllers\gamesController.cs" />
     <Compile Include="Controllers\GamesLobbyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\itemsController.cs" />
     <Compile Include="Controllers\mapsController.cs" />
     <Compile Include="Controllers\player_sheetsController.cs" />
     <Compile Include="Controllers\SettingsController.cs" />
@@ -177,9 +183,6 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="items.cs">
-      <DependentUpon>ZeroHP_DB.tt</DependentUpon>
     </Compile>
     <Compile Include="maps.cs">
       <DependentUpon>ZeroHP_DB.tt</DependentUpon>
@@ -322,16 +325,15 @@
     <Content Include="Views\GamesLobby\AddChar.cshtml" />
     <Content Include="Views\GamesLobby\Index.cshtml" />
     <Content Include="Views\GamesLobby\AddGame.cshtml" />
-    <Content Include="Views\GamesLobby\AddCharacter.cshtml" />
+    <Content Include="Views\games\Index.cshtml" />
+    <Content Include="Views\player_sheets\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
     <Folder Include="Views\DMGamesViewComponent\" />
-    <Folder Include="Views\games\" />
     <Folder Include="Views\items\" />
     <Folder Include="Views\maps\" />
-    <Folder Include="Views\player_sheets\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.min.css.map" />

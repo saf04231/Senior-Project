@@ -4,6 +4,7 @@ using System.Web.Mvc;
 namespace DADS.Controllers
 {
     [RequireHttps]
+    [AllowAnonymous]
     public class HomeController : Controller
     {
         public ActionResult Index()
