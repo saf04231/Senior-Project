@@ -1,15 +1,14 @@
 ﻿@model DADS.player_sheets
 
 @{
-    ViewBag.Title = "AddCharacter";
+    ViewBag.Title = "AddChar";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h2>AddCharacter</h2>
 
 <div class="main-body">
     @using (Html.BeginForm())
     {
+
         <div class="form-horizontal">
             <h4>New PLayer Sheet!</h4>
             <hr />
@@ -25,7 +24,7 @@
             <div class="form-group">
                 <h6 class="control-label col-md-2">Description</h6>
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.description, new { htmlAttributes = new { @class = "form-control",  } })
+                    @Html.EditorFor(model => model.description, new { htmlAttributes = new { @class = "form-control", } })
                     @Html.ValidationMessageFor(model => model.description, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -60,33 +59,33 @@
             <div class="form-group">
                 <h6 class="control-label col-md-2">CP</h6>
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.statslist.cp, new { htmlAttributes = new { @class = "form-control" }
+                    @Html.EditorFor(model => model.stats.cp, new { htmlAttributes = new { @class = "form-control" }
     })
-                    @Html.ValidationMessageFor(model => model.statslist.cp, "", new { @class = "text-danger" })
+                    @Html.ValidationMessageFor(model => model.stats.cp, "", new { @class = "text-danger" })
                 </div>
             </div>
 
             <div class="form-group">
                 <h6 class="control-label col-md-2">SP</h6>
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.statslist.sp, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.statslist.sp, "", new { @class = "text-danger" })
+                    @Html.EditorFor(model => model.stats.sp, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.stats.sp, "", new { @class = "text-danger" })
                 </div>
             </div>
 
             <div class="form-group">
                 <h6 class="control-label col-md-2">GP</h6>
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.statslist.gp, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.statslist.gp, "", new { @class = "text-danger" })
+                    @Html.EditorFor(model => model.stats.gp, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.stats.gp, "", new { @class = "text-danger" })
                 </div>
             </div>
 
             <div class="form-group">
                 <h6 class="control-label col-md-2">PP</h6>
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.statslist.pp, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.statslist.pp, "", new { @class = "text-danger" })
+                    @Html.EditorFor(model => model.stats.pp, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.stats.pp, "", new { @class = "text-danger" })
                 </div>
             </div>
 
@@ -97,21 +96,7 @@
         </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        
 
         <div class="form-horizontal">
             <h4>Stats</h4>
@@ -119,80 +104,80 @@
             <div class="form-group">
                 <h6 class="control-label col-md-2">Experience Points</h6>
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.statslist.exp, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.statslist.exp, "", new { @class = "text-danger" })
+                    @Html.EditorFor(model => model.stats.exp, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.stats.exp, "", new { @class = "text-danger" })
                 </div>
             </div>
 
             <div class="form-group">
                 <h6 class="control-label col-md-2">Proficiency Bonus</h6>
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.statslist.proficiencyBonus, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.statslist.proficiencyBonus, "", new { @class = "text-danger" })
+                    @Html.EditorFor(model => model.stats.proficiencyBonus, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.stats.proficiencyBonus, "", new { @class = "text-danger" })
                 </div>
             </div>
 
             <div class="form-group">
                 <h6 class="control-label col-md-2">Strength</h6>
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.statslist.strength, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.statslist.strength, "", new { @class = "text-danger" })
+                    @Html.EditorFor(model => model.stats.strength, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.stats.strength, "", new { @class = "text-danger" })
                 </div>
             </div>
 
             <div class="form-group">
                 <h6 class="control-label col-md-2">Dexterity</h6>
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.statslist.dexterity, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.statslist.dexterity, "", new { @class = "text-danger" })
+                    @Html.EditorFor(model => model.stats.dexterity, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.stats.dexterity, "", new { @class = "text-danger" })
                 </div>
             </div>
 
             <div class="form-group">
                 <h6 class="control-label col-md-2">Constitution</h6>
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.statslist.constitution, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.statslist.constitution, "", new { @class = "text-danger" })
+                    @Html.EditorFor(model => model.stats.constitution, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.stats.constitution, "", new { @class = "text-danger" })
                 </div>
             </div>
 
             <div class="form-group">
                 <h6 class="control-label col-md-2">Dexterity</h6>
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.statslist.dexterity, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.statslist.dexterity, "", new { @class = "text-danger" })
+                    @Html.EditorFor(model => model.stats.dexterity, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.stats.dexterity, "", new { @class = "text-danger" })
                 </div>
             </div>
 
             <div class="form-group">
                 <h6 class="control-label col-md-2">Intelligence</h6>
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.statslist.intelligence, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.statslist.intelligence, "", new { @class = "text-danger" })
+                    @Html.EditorFor(model => model.stats.intelligence, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.stats.intelligence, "", new { @class = "text-danger" })
                 </div>
             </div>
 
             <div class="form-group">
                 <h6 class="control-label col-md-2">Wisdom</h6>
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.statslist.wisdom, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.statslist.wisdom, "", new { @class = "text-danger" })
+                    @Html.EditorFor(model => model.stats.wisdom, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.stats.wisdom, "", new { @class = "text-danger" })
                 </div>
             </div>
 
             <div class="form-group">
                 <h6 class="control-label col-md-2">Charisma</h6>
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.statslist.charisma, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.statslist.charisma, "", new { @class = "text-danger" })
+                    @Html.EditorFor(model => model.stats.charisma, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.stats.charisma, "", new { @class = "text-danger" })
                 </div>
             </div>
 
             <div class="form-group">
                 <h6 class="control-label col-md-2">Passive Wisdom</h6>
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.statslist.passiveWisdom, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.statslist.passiveWisdom, "", new { @class = "text-danger" })
+                    @Html.EditorFor(model => model.stats.passiveWisdom, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.stats.passiveWisdom, "", new { @class = "text-danger" })
                 </div>
             </div>
 
@@ -394,10 +379,10 @@
 
 
 
-    <input type="submit" value="Create" class="btn btn-default" />
+        <input type="submit" value="Create" class="btn btn-default" />
 
-}
-    </div>
-    <div>
-        @Html.ActionLink("Back to List", "Index")
-    </div>
+    }
+</div>
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
