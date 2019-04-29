@@ -6,27 +6,27 @@ using System.Web.Mvc;
 
 namespace DADS.Controllers
 {
-    public class UserController : Controller
+    public class GamesListController : Controller
     {
-        // GET: User
+        // GET: GamesList
         public ActionResult Index()
         {
             return View();
         }
 
-        // GET: User/Details/5
+        // GET: GamesList/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: User/Create
+        // GET: GamesList/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: User/Create
+        // POST: GamesList/Create
         [HttpPost]
         public ActionResult Create(FormCollection collection)
         {
@@ -42,13 +42,13 @@ namespace DADS.Controllers
             }
         }
 
-        // GET: User/Edit/5
+        // GET: GamesList/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: User/Edit/5
+        // POST: GamesList/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
@@ -56,7 +56,7 @@ namespace DADS.Controllers
             {
                 // TODO: Add update logic here
 
-                return RedirectToAction("Index","Home");
+                return RedirectToAction("Index");
             }
             catch
             {
@@ -64,13 +64,13 @@ namespace DADS.Controllers
             }
         }
 
-        // GET: User/Delete/5
+        // GET: GamesList/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: User/Delete/5
+        // POST: GamesList/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {

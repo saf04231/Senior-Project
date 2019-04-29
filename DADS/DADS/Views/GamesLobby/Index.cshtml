@@ -1,0 +1,50 @@
+﻿@model IEnumerable<DADS.games>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="main-body">
+    <div>
+        <div style="float: right; padding-bottom: 5px">
+            @Html.ActionLink("Create Game", "AddGame", "GamesLobby", null, new { @class = "" }) |
+            @Html.ActionLink("Create Character", "AddChar", "GamesLobby", null, new { @class = "" })
+        </div>
+        <br>
+        <hr />
+        <table width="100%">
+            <thead>
+                <tr>
+                    <th>Name of Game</th>
+                    <th>Role</th>
+                    <th>Options</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null)
+                {
+                    foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(modelItem => item.name)</td>
+                            <td>@Html.DisplayFor(modelItem => item.dm)</td>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.Id">Invite Player</a> |
+                                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                            </td>
+                        </tr>
+                        <tr><td colspan="5"> <hr /> </td></tr>
+
+                    }
+                }
+                @if (Model == null)
+                {
+                <tr><th>NO games or characters found! Please create one!</th></tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

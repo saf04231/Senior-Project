@@ -4,31 +4,39 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-//TODO: Change server controller to connect to DB and act as the HomeController. 
-
 namespace DADS.Controllers
 {
-    public class ServerController : Controller
+    public class GamesLobbyController : Controller
     {
-        // GET: Server
+        // GET: GamesLobby
         public ActionResult Index()
         {
             return View();
         }
 
-        // GET: Server/Details/5
+        public ActionResult AddChar()
+        {
+            return View();
+        }
+
+        public ActionResult AddGame()
+        {
+            return View();
+        }
+
+        // GET: GamesLobby/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: Server/Create
+        // GET: GamesLobby/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Server/Create
+        // POST: GamesLobby/Create
         [HttpPost]
         public ActionResult Create(FormCollection collection)
         {
@@ -44,13 +52,13 @@ namespace DADS.Controllers
             }
         }
 
-        // GET: Server/Edit/5
+        // GET: GamesLobby/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: Server/Edit/5
+        // POST: GamesLobby/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
@@ -66,13 +74,13 @@ namespace DADS.Controllers
             }
         }
 
-        // GET: Server/Delete/5
+        // GET: GamesLobby/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: Server/Delete/5
+        // POST: GamesLobby/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {
