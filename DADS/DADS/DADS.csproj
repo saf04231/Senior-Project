@@ -211,7 +211,6 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\map.js" />
-    <Content Include="Scripts\mapCanvas.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\popper-utils.js" />
     <Content Include="Scripts\popper-utils.min.js" />
@@ -236,14 +235,10 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Game\GameView.cshtml" />
-    <Content Include="Views\Game\_Actors.cshtml" />
-    <Content Include="Views\Game\_Chat.cshtml" />
     <Content Include="Views\Settings\Index.cshtml" />
     <Content Include="Views\User\NewCharacter.cshtml" />
     <Content Include="Views\User\NewGame.cshtml" />
     <Content Include="Views\User\User.cshtml" />
-    <Content Include="Views\Game\_CharacterSheet.cshtml" />
-    <Content Include="Views\Game\_Map.cshtml" />
     <Content Include="Scripts\umd\popper.min.js.map" />
     <Content Include="Scripts\umd\popper.js.map" />
     <Content Include="Scripts\umd\popper-utils.min.js.map" />
