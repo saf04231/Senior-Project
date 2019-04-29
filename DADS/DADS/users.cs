@@ -10,30 +10,23 @@
 namespace DADS
 {
     using System;
-    using System.Collections;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
 
-    public partial class users : IEnumerable<games>
+    public partial class users
     {
         public int Id { get; set; }
+        [Required]
         public string username { get; set; }
+        [Required]
         public string email { get; set; }
+        [Required]
+        [RegularExpression(@"^(.*){8,}$", ErrorMessage = "Password length must be at least 8 characters long.")]
         public string password { get; set; }
     
         public virtual games gameList { get; set; }
         public virtual player_sheets player_sheets { get; set; }
         public virtual games game { get; set; }
-
-        IEnumerator<games> IEnumerable<games>.GetEnumerator()
-        {
-            throw new NotImplementedException();
-        }
-
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            throw new NotImplementedException();
-        }
     }
-
-
 }

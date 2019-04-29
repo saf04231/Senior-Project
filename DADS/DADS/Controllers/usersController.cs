@@ -21,7 +21,7 @@ namespace DADS.Controllers
         [AllowAnonymous]
         public ActionResult Index()
         {
-            var users = db.users.Include(u => u.player_sheets);
+            var users = db.users;
             return View(users.ToList());
         }
 
@@ -72,30 +72,28 @@ namespace DADS.Controllers
         [HttpPost]
         public ActionResult Login(users model)
         {
-            if (!ModelState.IsValid)
+            try
             {
-                return RedirectToAction("Index", "Home");
-            }
+                users user = db.users.Where(u => u.email == model.email && u.password == model.password).Single();
+            
+                if (user != null)
+                {
+                    var identity = new ClaimsIdentity(new[] {
+                        new Claim(ClaimTypes.Name, user.username),
+                        new Claim(ClaimTypes.Email, user.email)
+                    },
+                    "ApplicationCookie");
 
-            users user = db.users.Where(u => u.email == model.email && u.password == model.password).SingleOrDefault();
-            if (user != null)
+                    var ctx = Request.GetOwinContext();
+                    var authManager = ctx.Authentication;
+
+                    authManager.SignIn(identity);
+                }
+            }
+            catch (Exception)
             {
-                var identity = new ClaimsIdentity(new[] {
-                    new Claim(ClaimTypes.Name, user.username),
-                    new Claim(ClaimTypes.Email, user.email)
-                },
-                "ApplicationCookie");
-
-                var ctx = Request.GetOwinContext();
-                var authManager = ctx.Authentication;
-
-                authManager.SignIn(identity);
-
-                return RedirectToAction("Index", "Home");
+                ViewBag.LoginError = "Username and/or Email is invalid.";
             }
-
-            // user authN failed
-            ModelState.AddModelError("", "Invalid email or password");
             return RedirectToAction("Index", "Home");
         }
 

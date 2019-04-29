@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 04/25/2019 09:14:08
+-- Date Created: 04/28/2019 23:14:56
 -- Generated from EDMX file: C:\Users\sferl\Documents\GitHub\Senior-Project\DADS\DADS\ZeroHP_DB.edmx
 -- --------------------------------------------------
 
@@ -17,24 +17,37 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[FK_gamesmaps]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[maps] DROP CONSTRAINT [FK_gamesmaps];
+GO
+IF OBJECT_ID(N'[dbo].[FK_gamesplayer_sheets]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[player_sheets] DROP CONSTRAINT [FK_gamesplayer_sheets];
+GO
+IF OBJECT_ID(N'[dbo].[FK_usersgames]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[games] DROP CONSTRAINT [FK_usersgames];
+GO
+IF OBJECT_ID(N'[dbo].[FK_usersgames1]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[games] DROP CONSTRAINT [FK_usersgames1];
+GO
+IF OBJECT_ID(N'[dbo].[FK_usersplayer_sheets]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[player_sheets] DROP CONSTRAINT [FK_usersplayer_sheets];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
-IF OBJECT_ID('items','U') IS NOT NULL 
-	DROP TABLE items; 
+
+IF OBJECT_ID(N'[dbo].[games]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[games];
 GO
-IF OBJECT_ID('maps','U') IS NOT NULL 
-	DROP TABLE maps; 
+IF OBJECT_ID(N'[dbo].[maps]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[maps];
 GO
-IF OBJECT_ID('player_sheets','U') IS NOT NULL 
-	DROP TABLE player_sheets; 
+IF OBJECT_ID(N'[dbo].[player_sheets]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[player_sheets];
 GO
-IF OBJECT_ID('games','U') IS NOT NULL 
-	DROP TABLE games; 
-GO
-IF OBJECT_ID('users','U') IS NOT NULL 
-	DROP TABLE users; 
+IF OBJECT_ID(N'[dbo].[users]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[users];
 GO
 
 -- --------------------------------------------------
@@ -68,6 +81,10 @@ CREATE TABLE [dbo].[player_sheets] (
     [stats] nvarchar(max)  NOT NULL,
     [spells] nvarchar(max)  NULL,
     [notes] nvarchar(max)  NULL,
+    [weapon1] varchar(3)  NULL,
+    [weapon2] varchar(3)  NULL,
+    [weapon3] varchar(3)  NULL,
+    [statslist] varchar(3)  NOT NULL,
     [user_Id] int  NOT NULL,
     [games_Id] int  NULL
 );
@@ -80,17 +97,6 @@ CREATE TABLE [dbo].[maps] (
     [drawings] nvarchar(max)  NULL,
     [gamesId] int  NOT NULL,
     [name] nvarchar(max)  NULL
-);
-GO
-
--- Creating table 'items'
-CREATE TABLE [dbo].[items] (
-    [Id] int IDENTITY(1,1) NOT NULL,
-    [name] nvarchar(max)  NOT NULL,
-    [damage] nvarchar(max)  NULL,
-    [description] nvarchar(max)  NULL,
-    [types] nvarchar(max)  NULL,
-    [player_sheet_Id] int  NOT NULL
 );
 GO
 
@@ -119,12 +125,6 @@ GO
 -- Creating primary key on [Id] in table 'maps'
 ALTER TABLE [dbo].[maps]
 ADD CONSTRAINT [PK_maps]
-    PRIMARY KEY CLUSTERED ([Id] ASC);
-GO
-
--- Creating primary key on [Id] in table 'items'
-ALTER TABLE [dbo].[items]
-ADD CONSTRAINT [PK_items]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
@@ -160,21 +160,6 @@ GO
 CREATE INDEX [IX_FK_usersplayer_sheets]
 ON [dbo].[player_sheets]
     ([user_Id]);
-GO
-
--- Creating foreign key on [player_sheet_Id] in table 'items'
-ALTER TABLE [dbo].[items]
-ADD CONSTRAINT [FK_player_sheetsitems]
-    FOREIGN KEY ([player_sheet_Id])
-    REFERENCES [dbo].[player_sheets]
-        ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_player_sheetsitems'
-CREATE INDEX [IX_FK_player_sheetsitems]
-ON [dbo].[items]
-    ([player_sheet_Id]);
 GO
 
 -- Creating foreign key on [games_Id] in table 'player_sheets'

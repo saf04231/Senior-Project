@@ -173,7 +173,6 @@
     <Compile Include="Controllers\gamesController.cs" />
     <Compile Include="Controllers\GamesLobbyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\itemsController.cs" />
     <Compile Include="Controllers\mapsController.cs" />
     <Compile Include="Controllers\player_sheetsController.cs" />
     <Compile Include="Controllers\SettingsController.cs" />
@@ -184,9 +183,6 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="items.cs">
-      <DependentUpon>ZeroHP_DB.tt</DependentUpon>
     </Compile>
     <Compile Include="maps.cs">
       <DependentUpon>ZeroHP_DB.tt</DependentUpon>
@@ -329,12 +325,12 @@
     <Content Include="Views\GamesLobby\AddChar.cshtml" />
     <Content Include="Views\GamesLobby\Index.cshtml" />
     <Content Include="Views\GamesLobby\AddGame.cshtml" />
+    <Content Include="Views\games\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
     <Folder Include="Views\DMGamesViewComponent\" />
-    <Folder Include="Views\games\" />
     <Folder Include="Views\items\" />
     <Folder Include="Views\maps\" />
     <Folder Include="Views\player_sheets\" />

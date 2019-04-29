@@ -9,7 +9,21 @@
     <div class="row">
         <div class="col-md-9">
             <h3>Welcome to ZeroHP, the free online tabletop simulator!</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut a dignissim sem, pharetra sagittis lectus. Fusce nec odio at nisl fermentum sagittis. Mauris ullamcorper finibus erat ut pellentesque. Pellentesque hendrerit faucibus erat, vitae ultrices nisl mattis finibus. Phasellus aliquam tellus vel blandit egestas. Donec eget volutpat turpis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse pellentesque leo turpis, eget ullamcorper nulla imperdiet in. Aliquam erat volutpat. Vestibulum pellentesque sapien sed mi tristique pharetra. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
+            <p></p>
+            <h5>What is ZeroHP?</h5>
+            <p>
+                ZeroHP is your companion when it comes to keeping track of your tabletop RPG’s! ZeroHP is a free-to-use site that was created by four Vermont Tech college students for their senior project. 
+                Our goal was to provide players with an easy and intuitive way to begin enjoying tabletop RPGs online.
+            </p>
+
+            <h5>How Do I Get Started?</h5>
+            <p></p>
+            <p>For a walkthrough of the site, take a look at our <a href="https://github.com/saf04231/Senior-Project/wiki#welcome-to-the-zerohp-wiki" target="_blank">wiki</a>!</p>
+
+            <h5>Who can I contact?</h5>
+            <p>
+                Whether you have a random question or wish to report a bug, our devs can be reached at <a href="mailto: zerohp.devs@gmail.com">zerohp.devs@gmail.com</a>.
+            </p>
         </div>
         <div class="col-md-3">
             @using (Html.BeginForm("Login","users", FormMethod.Post))
@@ -22,6 +36,9 @@
                     </div>
                     <div class="form-group">
                         @Html.EditorFor(model => model.password, new { htmlAttributes = new { @class = "form-control", id = "password", placeholder = "Password" } })
+                    </div>
+                    <div class="error">
+                        @ViewBag.LoginError
                     </div>
                     <div class="form-group">
                         @*@Html.ActionLink("Submit", "Login", new { id = "loginSubmit" }, new { @class = "btn btn-primary" })*@

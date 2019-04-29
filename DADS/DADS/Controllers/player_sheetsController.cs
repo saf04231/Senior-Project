@@ -37,12 +37,12 @@ namespace DADS.Controllers
             return View(player_sheets);
         }
 
-        // GET: player_sheets/Create
-        public ActionResult Create()
-        {
-            ViewBag.Id = new SelectList(db.items, "Id", "name");
-            return View();
-        }
+        //// GET: player_sheets/Create
+        //public ActionResult Create()
+        //{
+        //    ViewBag.Id = new SelectList(db.items, "Id", "name");
+        //    return View();
+        //}
 
         // POST: player_sheets/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
@@ -72,7 +72,7 @@ namespace DADS.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.Id = new SelectList(db.items, "Id", "name", player_sheets.Id);
+            //ViewBag.Id = new SelectList(db.items, "Id", "name", player_sheets.Id);
             return View(player_sheets);
         }
 
@@ -89,7 +89,7 @@ namespace DADS.Controllers
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-            ViewBag.Id = new SelectList(db.items, "Id", "name", player_sheets.Id);
+            //ViewBag.Id = new SelectList(db.items, "Id", "name", player_sheets.Id);
             return View(player_sheets);
         }
 
