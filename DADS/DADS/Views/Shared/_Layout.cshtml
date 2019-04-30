@@ -1,4 +1,4 @@
-﻿@{ bool loggedIn = true; }
+﻿@*@{ users loggedinUser = ("IsLoggedIn","") }*@
 
 <!DOCTYPE html>
 <html lang="en-gb">
@@ -20,9 +20,8 @@
         <div class="navbar-collapse collapse" id="navbarSupportedContent">
             <ul class="nav navbar-nav mr-auto">
                 <li class="nav-item">@Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link" })</li>
-                <li class="nav-item">@Html.ActionLink("About", "About", "Home", null, new { @class = "nav-link" })</li>
-                <li class="nav-item">@Html.ActionLink("Contact", "Contact", "Home", null, new { @class = "nav-link" })</li>
-                @if (loggedIn)
+                <li class="nav-item"><a href="https://github.com/saf04231/Senior-Project/wiki#welcome-to-the-zerohp-wiki">Wiki</a></li>
+                @if (User.Identity.IsAuthenticated)
                 {
                     <li class="nav-item">@Html.ActionLink("Games List", "Index", "GamesLobby", null, new { @class = "nav-link" })</li>
                     <li class="nav-item">@Html.ActionLink("Game", "GameView", "Game", null, new { @class = "nav-link" })</li>

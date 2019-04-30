@@ -97,6 +97,23 @@ namespace DADS.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        public users GetLoggedInUser()
+        {
+            try
+            {
+                var ctx = Request.GetOwinContext();
+                var identity = ctx.Authentication.User.Identity;
+                users user = db.users.Where(u => u.username == identity.Name).Single();
+                
+                return user;
+            }
+            catch (Exception e)
+            {
+                ViewBag.LoginError = "User is not logged in." + e;
+                return null;
+            }
+        }
+
 
         public ActionResult LogOut()
         {
