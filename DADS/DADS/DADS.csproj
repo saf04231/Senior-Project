@@ -327,6 +327,7 @@
     <Content Include="Views\GamesLobby\AddGame.cshtml" />
     <Content Include="Views\games\Index.cshtml" />
     <Content Include="Views\player_sheets\Edit.cshtml" />
+    <Content Include="Views\player_sheets\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

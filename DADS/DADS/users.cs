@@ -11,18 +11,12 @@ namespace DADS
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
-
+    
     public partial class users
     {
         public int Id { get; set; }
-        [Required]
         public string username { get; set; }
-        [Required]
         public string email { get; set; }
-        [Required]
-        [RegularExpression(@"^(.*){8,}$", ErrorMessage = "Password length must be at least 8 characters long.")]
         public string password { get; set; }
     
         public virtual games gameList { get; set; }
