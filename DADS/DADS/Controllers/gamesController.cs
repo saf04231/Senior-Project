@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
@@ -16,19 +15,19 @@ namespace DADS.Controllers
         private ZeroHP_DBContainer db = new ZeroHP_DBContainer();
 
         // GET: games
-        public async Task<ActionResult> Index()
+        public ActionResult Index()
         {
-            return View(await db.games.ToListAsync());
+            return View(db.games.ToList());
         }
 
         // GET: games/Details/5
-        public async Task<ActionResult> Details(int? id)
+        public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            games games = await db.games.FindAsync(id);
+            games games = db.games.Find(id);
             if (games == null)
             {
                 return HttpNotFound();
@@ -41,31 +40,32 @@ namespace DADS.Controllers
         {
             return View();
         }
-        
+
         // POST: games/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        public async Task<ActionResult> Create([Bind(Include = "Id,name,description")] games games)
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "Id,name,description")] games games)
         {
             if (ModelState.IsValid)
             {
                 db.games.Add(games);
-                await db.SaveChangesAsync();
-                return RedirectToAction("../GamesLobby/Index");
+                db.SaveChanges();
+                return RedirectToAction("Index");
             }
 
-            return View("../GamesLobby/Index");
+            return View(games);
         }
 
         // GET: games/Edit/5
-        public async Task<ActionResult> Edit(int? id)
+        public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            games games = await db.games.FindAsync(id);
+            games games = db.games.Find(id);
             if (games == null)
             {
                 return HttpNotFound();
@@ -78,25 +78,25 @@ namespace DADS.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "Id,name,description")] games games)
+        public ActionResult Edit([Bind(Include = "Id,name,description")] games games)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(games).State = EntityState.Modified;
-                await db.SaveChangesAsync();
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(games);
         }
 
         // GET: games/Delete/5
-        public async Task<ActionResult> Delete(int? id)
+        public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            games games = await db.games.FindAsync(id);
+            games games = db.games.Find(id);
             if (games == null)
             {
                 return HttpNotFound();
@@ -107,11 +107,11 @@ namespace DADS.Controllers
         // POST: games/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmed(int id)
         {
-            games games = await db.games.FindAsync(id);
+            games games = db.games.Find(id);
             db.games.Remove(games);
-            await db.SaveChangesAsync();
+            db.SaveChanges();
             return RedirectToAction("Index");
         }
 

@@ -318,3 +318,7 @@ C:\Users\Kazuhara\Documents\GitHub\Senior-Project\DADS\DADS\bin\roslyn\System.Ne
 C:\Users\Kazuhara\Documents\GitHub\Senior-Project\DADS\DADS\bin\roslyn\System.Net.Sockets.dll
 C:\Users\Kazuhara\Documents\GitHub\Senior-Project\DADS\DADS\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
 C:\Users\Kazuhara\Documents\GitHub\Senior-Project\DADS\DADS\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\Kazuhara\Documents\GitHub\Senior-Project\DADS\DADS\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Kazuhara\Documents\GitHub\Senior-Project\DADS\DADS\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Kazuhara\Documents\GitHub\Senior-Project\DADS\DADS\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Kazuhara\Documents\GitHub\Senior-Project\DADS\DADS\bin\Microsoft.Owin.Security.Cookies.xml
