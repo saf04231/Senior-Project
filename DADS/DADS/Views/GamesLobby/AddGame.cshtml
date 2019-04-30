@@ -1,4 +1,4 @@
-﻿@model DADS.games
+﻿@model DADS.player_sheets
 
 @{
     ViewBag.Title = "AddGame";
@@ -8,58 +8,31 @@
 <div class="main-body">
     @using (Html.BeginForm("Create", "games", FormMethod.Post))
     {
-        <div class="form-horizontal">
-            <h4>Add Game!</h4>
-            <hr />
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            <div class="form-group">
-                <h6 class = "control-label col-md-2" >Name</h6>
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.name, "", new { @class = "text-danger" })
-                </div>
-            </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Label</th>
+                    <th>Data</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Name: </td>
+                    <td>@Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })</td>
+                </tr>
+                <tr>
+                    <td>description: </td>
+                    <td>@Html.EditorFor(model => model.description, new { htmlAttributes = new { @class = "form-control" } })</td>
+                </tr>
 
-            <div class="form-group">
-                <h6 class="control-label col-md-2">Description</h6>
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.description, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.description, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Save Game!" class="btn btn-primary" id="addGame" />
-                </div>
-            </div>
-        </div>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="submit" value="Save Game!" class="btn btn-primary" id="addGame" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     }
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

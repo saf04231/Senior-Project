@@ -1,5 +1,3 @@
-@model DADS.Models.GameChar
-
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -14,7 +12,7 @@
                     </span>
                     <span class="btn btn-light btn-file">
                         Add actors
-                        <input type="file" />
+                        <input type="file"/>
                     </span>
                 </div>
                 <div class="btn-group">
@@ -38,11 +36,12 @@
                 <a class="nav-link" href="#actorPanel" data-toggle="tab" role="tab">Actors</a>
             </li>
         </ul>
-        <div class="tab-content" id="tabContent">
-            <div class="tab-pane fade show active" id="characterSheetPanel" role="tabpanel" aria-labelledby="cs-tab">
 
         <div class="tab-content" id="tabContent">
-            <div class="tab-pane fade show active" id="characterSheetPanel" role="tabpanel" aria-labelledby="cs-tab">Character Sheet</div>
+            <div class="tab-pane fade show active" id="characterSheetPanel" role="tabpanel" aria-labelledby="cs-tab">
+                @*Character Sheet*@
+                @Html.Partial("../player_sheets/Edit")
+            </div>
             <div class="tab-pane fade" id="actorPanel" role="tabpanel" aria-labelledby="actor-tab">Actors</div>
             <div class="tab-pane fade" id="chatPanel" role="tabpanel" aria-labelledby="chat-tab">Chat</div>
         </div>
