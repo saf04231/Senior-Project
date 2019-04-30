@@ -45,17 +45,36 @@ namespace DADS.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,name,description")] games games)
         {
             if (ModelState.IsValid)
             {
+                //games.dm = GetLoggedInUser();
+                users user = GetLoggedInUser();
+                //user.gameList = games;
                 db.games.Add(games);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
             return View(games);
+        }
+
+        public users GetLoggedInUser()
+        {
+            try
+            {
+                var ctx = Request.GetOwinContext();
+                var identity = ctx.Authentication.User.Identity;
+                users user = db.users.Where(u => u.username == identity.Name).Single();
+
+                return user;
+            }
+            catch (Exception e)
+            {
+                ViewBag.LoginError = "User is not logged in." + e;
+                return null;
+            }
         }
 
         // GET: games/Edit/5
