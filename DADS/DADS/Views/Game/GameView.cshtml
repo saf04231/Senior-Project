@@ -40,8 +40,12 @@
                 <a class="nav-link" href="#actorPanel" data-toggle="tab" role="tab">Actors</a>
             </li>
         </ul>
+
         <div class="tab-content" id="tabContent">
             <div class="tab-pane fade show active" id="characterSheetPanel" role="tabpanel" aria-labelledby="cs-tab">
+                @*Character Sheet*@
+                @Html.Partial("../player_sheets/Edit")
+            </div>
 
         <div class="tab-content" id="tabContent">
             <div class="tab-pane fade show active" id="characterSheetPanel" role="tabpanel" aria-labelledby="cs-tab">
