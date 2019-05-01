@@ -26,35 +26,37 @@
     <script type="text/javascript" src="~/Scripts/map.js"></script>
 
     <div class="col">
-           Character Sheet
+        <h2>Character Sheet</h2>
+        @*Character Sheet*@
+        @Html.Partial("../player_sheets/Edit")
+        
         <!-- Commented out because with no DM features implemented, this is pretty pointless.
 
-        <ul class="nav nav-tabs bg-light nav-justified" role="tablist">
-            <li class="nav-item active">
-                <a class="nav-link" href="#characterSheetPanel" data-toggle="tab" role="tab">Character Sheet</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#chatPanel" data-toggle="tab" role="tab">Chat</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#actorPanel" data-toggle="tab" role="tab">Actors</a>
-            </li>
-        </ul>
+    <ul class="nav nav-tabs bg-light nav-justified" role="tablist">
+        <li class="nav-item active">
+            <a class="nav-link" href="#characterSheetPanel" data-toggle="tab" role="tab">Character Sheet</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#chatPanel" data-toggle="tab" role="tab">Chat</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#actorPanel" data-toggle="tab" role="tab">Actors</a>
+        </li>
+    </ul>
 
-        <div class="tab-content" id="tabContent">
-            <div class="tab-pane fade show active" id="characterSheetPanel" role="tabpanel" aria-labelledby="cs-tab">
-                @*Character Sheet*@
-                @Html.Partial("../player_sheets/Edit")
-            </div>
+    <div class="tab-content" id="tabContent">
+        <div class="tab-pane fade show active" id="characterSheetPanel" role="tabpanel" aria-labelledby="cs-tab">
 
-        <div class="tab-content" id="tabContent">
-            <div class="tab-pane fade show active" id="characterSheetPanel" role="tabpanel" aria-labelledby="cs-tab">
-                
-            </div>
-            <div class="tab-pane fade" id="actorPanel" role="tabpanel" aria-labelledby="actor-tab">Actors</div>
-            <div class="tab-pane fade" id="chatPanel" role="tabpanel" aria-labelledby="chat-tab">Chat</div>
         </div>
-        -->
+
+    <div class="tab-content" id="tabContent">
+        <div class="tab-pane fade show active" id="characterSheetPanel" role="tabpanel" aria-labelledby="cs-tab">
+
+        </div>
+        <div class="tab-pane fade" id="actorPanel" role="tabpanel" aria-labelledby="actor-tab">Actors</div>
+        <div class="tab-pane fade" id="chatPanel" role="tabpanel" aria-labelledby="chat-tab">Chat</div>
+    </div>
+    -->
     </div>
 </div>
 
