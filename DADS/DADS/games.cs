@@ -11,7 +11,8 @@ namespace DADS
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class games
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,7 +22,9 @@ namespace DADS
         }
     
         public int Id { get; set; }
+        [Required]
         public string name { get; set; }
+        [Required]
         public string description { get; set; }
     
         public virtual users players { get; set; }

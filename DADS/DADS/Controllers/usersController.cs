@@ -97,9 +97,6 @@ namespace DADS.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        
-
-
         public ActionResult LogOut()
         {
             var ctx = Request.GetOwinContext();

@@ -48,10 +48,10 @@ namespace DADS.Controllers
         public ActionResult Create([Bind(Include = "Id,name,description")] games games)
         {
             if (ModelState.IsValid)
-            {
-                //games.dm = GetLoggedInUser();
+            { 
                 users user = GetLoggedInUser();
-                //user.gameList = games;
+                games.dm = user;
+                games.players = user;
                 db.games.Add(games);
                 db.SaveChanges();
                 return RedirectToAction("Index");
