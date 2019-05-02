@@ -10,17 +10,17 @@ using DADS;
 
 namespace DADS.Controllers
 {
-    public class gamesController : Controller
+    public class GameLobbyController : Controller
     {
         private ZeroHP_DBContainer db = new ZeroHP_DBContainer();
 
-        // GET: games
+        // GET: GameLobby
         public ActionResult Index()
         {
             return View(db.games.ToList());
         }
 
-        // GET: games/Details/5
+        // GET: GameLobby/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -35,24 +35,22 @@ namespace DADS.Controllers
             return View(games);
         }
 
-        // GET: games/Create
+        // GET: GameLobby/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: games/Create
+        // POST: GameLobby/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         public ActionResult Create([Bind(Include = "Id,name,description")] games games)
         {
             if (ModelState.IsValid)
-            { 
-                //users user = GetLoggedInUser();
-                //games.dm = user;
-                //games.players = user;
-                
+            {
+                games.dm = userController.LoggedInUser;
+                System.Diagnostics.Debug.WriteLine("DM in GameLobbyController =" + games.dm);
                 db.games.Add(games);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -78,7 +76,7 @@ namespace DADS.Controllers
             }
         }
 
-        // GET: games/Edit/5
+        // GET: GameLobby/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -93,11 +91,10 @@ namespace DADS.Controllers
             return View(games);
         }
 
-        // POST: games/Edit/5
+        // POST: GameLobby/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,name,description")] games games)
         {
             if (ModelState.IsValid)
@@ -109,7 +106,7 @@ namespace DADS.Controllers
             return View(games);
         }
 
-        // GET: games/Delete/5
+        // GET: GameLobby/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -124,9 +121,8 @@ namespace DADS.Controllers
             return View(games);
         }
 
-        // POST: games/Delete/5
+        // POST: GameLobby/Delete/5
         [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
             games games = db.games.Find(id);

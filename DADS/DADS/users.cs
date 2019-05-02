@@ -11,22 +11,24 @@ namespace DADS
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
-
+    
     public partial class users
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public users()
+        {
+            this.player_sheets = new HashSet<player_sheets>();
+            this.game = new HashSet<games>();
+        }
+    
         public int Id { get; set; }
-        [Required]
         public string username { get; set; }
-        [Required]
         public string email { get; set; }
-        [Required]
-        [RegularExpression(@"^(.*){8,}$", ErrorMessage = "Password length must be at least 8 characters long.")]
         public string password { get; set; }
     
-        public virtual games gameList { get; set; }
-        public virtual player_sheets player_sheets { get; set; }
-        public virtual games game { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<player_sheets> player_sheets { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<games> game { get; set; }
     }
 }

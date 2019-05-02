@@ -168,15 +168,17 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\GameLobbyController.cs" />
     <Compile Include="Controllers\gamesController.cs" />
+    <Compile Include="Controllers\userController.cs" />
+    <Compile Include="database_firewall_rules.cs">
+      <DependentUpon>ZeroHP_DB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Startup.cs" />
-    <Compile Include="Controllers\GameController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\mapsController.cs" />
     <Compile Include="Controllers\player_sheetsController.cs" />
     <Compile Include="Controllers\SettingsController.cs" />
-    <Compile Include="Controllers\UserController.cs" />
-    <Compile Include="Controllers\usersController.cs" />
     <Compile Include="games.cs">
       <DependentUpon>ZeroHP_DB.tt</DependentUpon>
     </Compile>
@@ -295,9 +297,6 @@
     <Content Include="Views\Game\_Actors.cshtml" />
     <Content Include="Views\Game\_Chat.cshtml" />
     <Content Include="Views\Settings\Index.cshtml" />
-    <Content Include="Views\User\NewCharacter.cshtml" />
-    <Content Include="Views\User\NewGame.cshtml" />
-    <Content Include="Views\User\User.cshtml" />
     <Content Include="Views\Game\_CharacterSheet.cshtml" />
     <Content Include="Views\Game\_Map.cshtml" />
     <Content Include="Scripts\umd\popper.min.js.map" />
@@ -316,11 +315,6 @@
     <Content Include="ZeroHP_DB.edmx.diagram">
       <DependentUpon>ZeroHP_DB.edmx</DependentUpon>
     </Content>
-    <Content Include="Views\users\Create.cshtml" />
-    <Content Include="Views\users\Delete.cshtml" />
-    <Content Include="Views\users\Details.cshtml" />
-    <Content Include="Views\users\Edit.cshtml" />
-    <Content Include="Views\users\Index.cshtml" />
     <Content Include="Views\player_sheets\Edit.cshtml" />
     <Content Include="Views\player_sheets\Create.cshtml" />
     <Content Include="Views\games\Create.cshtml" />
@@ -328,12 +322,23 @@
     <Content Include="Views\games\Details.cshtml" />
     <Content Include="Views\games\Edit.cshtml" />
     <Content Include="Views\games\Index.cshtml" />
+    <Content Include="Views\User\Create.cshtml" />
+    <Content Include="Views\User\Delete.cshtml" />
+    <Content Include="Views\User\Details.cshtml" />
+    <Content Include="Views\User\Edit.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\GameLobby\Create.cshtml" />
+    <Content Include="Views\GameLobby\Delete.cshtml" />
+    <Content Include="Views\GameLobby\Details.cshtml" />
+    <Content Include="Views\GameLobby\Edit.cshtml" />
+    <Content Include="Views\GameLobby\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
     <Folder Include="Views\DMGamesViewComponent\" />
     <Folder Include="Views\items\" />
+    <Folder Include="Views\Login\" />
     <Folder Include="Views\maps\" />
   </ItemGroup>
   <ItemGroup>

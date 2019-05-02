@@ -29,5 +29,6 @@ namespace DADS
         public virtual DbSet<games> games { get; set; }
         public virtual DbSet<player_sheets> player_sheets { get; set; }
         public virtual DbSet<maps> maps { get; set; }
+        public virtual DbSet<database_firewall_rules> database_firewall_rules { get; set; }
     }
 }

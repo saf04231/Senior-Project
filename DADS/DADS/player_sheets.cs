@@ -14,6 +14,12 @@ namespace DADS
     
     public partial class player_sheets
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public player_sheets()
+        {
+            this.games = new HashSet<games>();
+        }
+    
         public int Id { get; set; }
         public string name { get; set; }
         public string description { get; set; }
@@ -26,6 +32,7 @@ namespace DADS
         public string statslist { get; set; }
     
         public virtual users user { get; set; }
-        public virtual games games { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<games> games { get; set; }
     }
 }

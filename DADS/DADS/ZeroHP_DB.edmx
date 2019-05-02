@@ -4,140 +4,164 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="ZeroHP_DB.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="games">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="name" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="description" Type="nvarchar(max)" />
-          <Property Name="players_Id" Type="int" />
-          <Property Name="dm_Id" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="maps">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="image" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="drawings" Type="nvarchar(max)" />
-          <Property Name="gamesId" Type="int" Nullable="false" />
-          <Property Name="name" Type="nvarchar(max)" />
-        </EntityType>
-        <EntityType Name="player_sheets">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="name" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="description" Type="nvarchar(max)" />
-          <Property Name="stats" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="spells" Type="nvarchar(max)" />
-          <Property Name="notes" Type="nvarchar(max)" />
-          <Property Name="weapon1" Type="varchar" MaxLength="3" />
-          <Property Name="weapon2" Type="varchar" MaxLength="3" />
-          <Property Name="weapon3" Type="varchar" MaxLength="3" />
-          <Property Name="statslist" Type="varchar" MaxLength="3" Nullable="false" />
-          <Property Name="user_Id" Type="int" Nullable="false" />
-          <Property Name="games_Id" Type="int" />
-        </EntityType>
-        <EntityType Name="users">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="username" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="email" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="password" Type="nvarchar(max)" Nullable="false" />
-        </EntityType>
-        <Association Name="FK_gamesmaps">
-          <End Role="games" Type="Self.games" Multiplicity="1" />
-          <End Role="maps" Type="Self.maps" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="games">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="maps">
-              <PropertyRef Name="gamesId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_gamesplayer_sheets">
-          <End Role="games" Type="Self.games" Multiplicity="0..1" />
-          <End Role="player_sheets" Type="Self.player_sheets" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="games">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="player_sheets">
-              <PropertyRef Name="games_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_usersgames">
-          <End Role="users" Type="Self.users" Multiplicity="1" />
-          <End Role="games" Type="Self.games" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="users">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="games">
-              <PropertyRef Name="dm_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_usersgames1">
-          <End Role="users" Type="Self.users" Multiplicity="0..1" />
-          <End Role="games" Type="Self.games" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="users">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="games">
-              <PropertyRef Name="players_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_usersplayer_sheets">
-          <End Role="users" Type="Self.users" Multiplicity="1" />
-          <End Role="player_sheets" Type="Self.player_sheets" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="users">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="player_sheets">
-              <PropertyRef Name="user_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityContainer Name="ZeroHP_DBStoreContainer">
-          <EntitySet Name="games" EntityType="Self.games" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="maps" EntityType="Self.maps" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="player_sheets" EntityType="Self.player_sheets" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_gamesmaps" Association="Self.FK_gamesmaps">
-            <End Role="games" EntitySet="games" />
-            <End Role="maps" EntitySet="maps" />
-          </AssociationSet>
-          <AssociationSet Name="FK_gamesplayer_sheets" Association="Self.FK_gamesplayer_sheets">
-            <End Role="games" EntitySet="games" />
-            <End Role="player_sheets" EntitySet="player_sheets" />
-          </AssociationSet>
-          <AssociationSet Name="FK_usersgames" Association="Self.FK_usersgames">
-            <End Role="users" EntitySet="users" />
-            <End Role="games" EntitySet="games" />
-          </AssociationSet>
-          <AssociationSet Name="FK_usersgames1" Association="Self.FK_usersgames1">
-            <End Role="users" EntitySet="users" />
-            <End Role="games" EntitySet="games" />
-          </AssociationSet>
-          <AssociationSet Name="FK_usersplayer_sheets" Association="Self.FK_usersplayer_sheets">
-            <End Role="users" EntitySet="users" />
-            <End Role="player_sheets" EntitySet="player_sheets" />
-          </AssociationSet>
-        </EntityContainer>
-      </Schema></edmx:StorageModels>
+    <Schema Namespace="ZeroHP_DB.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ZeroHP_DBStoreContainer">
+    <EntitySet Name="users" EntityType="ZeroHP_DB.Store.users" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="games" EntityType="ZeroHP_DB.Store.games" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="player_sheets" EntityType="ZeroHP_DB.Store.player_sheets" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="maps" EntityType="ZeroHP_DB.Store.maps" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="database_firewall_rules" EntityType="ZeroHP_DB.Store.database_firewall_rules" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="gamesplayer_sheets" EntityType="ZeroHP_DB.Store.gamesplayer_sheets" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="usersplayer_sheets" Association="ZeroHP_DB.Store.usersplayer_sheets">
+      <End Role="users" EntitySet="users" />
+      <End Role="player_sheets" EntitySet="player_sheets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_gamesplayer_sheets_games" Association="ZeroHP_DB.Store.FK_gamesplayer_sheets_games">
+      <End Role="games" EntitySet="games" />
+      <End Role="gamesplayer_sheets" EntitySet="gamesplayer_sheets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_gamesplayer_sheets_player_sheets" Association="ZeroHP_DB.Store.FK_gamesplayer_sheets_player_sheets">
+      <End Role="player_sheets" EntitySet="player_sheets" />
+      <End Role="gamesplayer_sheets" EntitySet="gamesplayer_sheets" />
+    </AssociationSet>
+    <AssociationSet Name="gamesmaps" Association="ZeroHP_DB.Store.gamesmaps">
+      <End Role="games" EntitySet="games" />
+      <End Role="maps" EntitySet="maps" />
+    </AssociationSet>
+    <AssociationSet Name="usersgames" Association="ZeroHP_DB.Store.usersgames">
+      <End Role="users" EntitySet="users" />
+      <End Role="games" EntitySet="games" />
+    </AssociationSet>
+    </EntityContainer>
+  <EntityType Name="users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="password" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="games">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="description" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="dm_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="player_sheets">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="description" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="stats" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="spells" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="notes" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="weapon1" Type="varchar" Nullable="true" MaxLength="3" />
+    <Property Name="weapon2" Type="varchar" Nullable="true" MaxLength="3" />
+    <Property Name="weapon3" Type="varchar" Nullable="true" MaxLength="3" />
+    <Property Name="statslist" Type="varchar" Nullable="false" MaxLength="3" />
+    <Property Name="user_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="maps">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="image" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="drawings" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="gamesId" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="database_firewall_rules">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="name" />
+      <PropertyRef Name="start_ip_address" />
+      <PropertyRef Name="end_ip_address" />
+      <PropertyRef Name="create_date" />
+      <PropertyRef Name="modify_date" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="start_ip_address" Type="varchar" Nullable="false" MaxLength="45" />
+    <Property Name="end_ip_address" Type="varchar" Nullable="false" MaxLength="45" />
+    <Property Name="create_date" Type="datetime" Nullable="false" />
+    <Property Name="modify_date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="gamesplayer_sheets">
+    <Key>
+      <PropertyRef Name="games_Id" />
+      <PropertyRef Name="player_sheets_Id" />
+    </Key>
+    <Property Name="games_Id" Type="int" Nullable="false" />
+    <Property Name="player_sheets_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="usersplayer_sheets">
+    <End Role="users" Type="ZeroHP_DB.Store.users" Multiplicity="1" />
+    <End Role="player_sheets" Type="ZeroHP_DB.Store.player_sheets" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="player_sheets">
+        <PropertyRef Name="user_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="gamesmaps">
+    <End Role="games" Type="ZeroHP_DB.Store.games" Multiplicity="1" />
+    <End Role="maps" Type="ZeroHP_DB.Store.maps" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="games">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="maps">
+        <PropertyRef Name="gamesId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="usersgames">
+    <End Role="users" Type="ZeroHP_DB.Store.users" Multiplicity="1" />
+    <End Role="games" Type="ZeroHP_DB.Store.games" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="games">
+        <PropertyRef Name="dm_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_gamesplayer_sheets_games">
+    <End Role="games" Type="ZeroHP_DB.Store.games" Multiplicity="1" />
+    <End Role="gamesplayer_sheets" Type="ZeroHP_DB.Store.gamesplayer_sheets" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="games">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="gamesplayer_sheets">
+        <PropertyRef Name="games_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_gamesplayer_sheets_player_sheets">
+    <End Role="gamesplayer_sheets" Type="ZeroHP_DB.Store.gamesplayer_sheets" Multiplicity="*" />
+    <End Role="player_sheets" Type="ZeroHP_DB.Store.player_sheets" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="player_sheets">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="gamesplayer_sheets">
+        <PropertyRef Name="player_sheets_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="ZeroHP_DB" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
@@ -146,10 +170,6 @@
           <EntitySet Name="games" EntityType="ZeroHP_DB.games" />
           <EntitySet Name="player_sheets" EntityType="ZeroHP_DB.player_sheets" />
           <EntitySet Name="maps" EntityType="ZeroHP_DB.maps" />
-          <AssociationSet Name="usersgames1" Association="ZeroHP_DB.usersgames1">
-            <End Role="users" EntitySet="users" />
-            <End Role="games" EntitySet="games" />
-          </AssociationSet>
           <AssociationSet Name="usersplayer_sheets" Association="ZeroHP_DB.usersplayer_sheets">
             <End Role="users" EntitySet="users" />
             <End Role="player_sheets" EntitySet="player_sheets" />
@@ -163,9 +183,10 @@
             <End Role="maps" EntitySet="maps" />
           </AssociationSet>
           <AssociationSet Name="usersgames" Association="ZeroHP_DB.usersgames">
-            <End Role="users" EntitySet="users" />
-            <End Role="games" EntitySet="games" />
+            <End EntitySet="users" Role="users" />
+            <End EntitySet="games" Role="games" />
           </AssociationSet>
+          <EntitySet Name="database_firewall_rules" EntityType="ZeroHP_DB.database_firewall_rules" />
         </EntityContainer>
         <EntityType Name="users">
           <Key>
@@ -175,7 +196,6 @@
           <Property Name="username" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="email" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="password" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <NavigationProperty Name="gameList" Relationship="ZeroHP_DB.usersgames1" FromRole="users" ToRole="games" />
           <NavigationProperty Name="player_sheets" Relationship="ZeroHP_DB.usersplayer_sheets" FromRole="users" ToRole="player_sheets" />
           <NavigationProperty Name="game" Relationship="ZeroHP_DB.usersgames" FromRole="users" ToRole="games" />
           </EntityType>
@@ -186,7 +206,6 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="description" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <NavigationProperty Name="players" Relationship="ZeroHP_DB.usersgames1" FromRole="games" ToRole="users" />
           <NavigationProperty Name="player_sheets" Relationship="ZeroHP_DB.gamesplayer_sheets" FromRole="games" ToRole="player_sheets" />
           <NavigationProperty Name="maps" Relationship="ZeroHP_DB.gamesmaps" FromRole="games" ToRole="maps" />
           <NavigationProperty Name="dm" Relationship="ZeroHP_DB.usersgames" FromRole="games" ToRole="users" />
@@ -219,17 +238,13 @@
           <Property Name="gamesId" Type="Int32" Nullable="false" />
           <Property Name="name" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
         </EntityType>
-        <Association Name="usersgames1">
-          <End Type="ZeroHP_DB.users" Role="users" Multiplicity="0..1" />
-          <End Type="ZeroHP_DB.games" Role="games" Multiplicity="0..1" />
-        </Association>
         <Association Name="usersplayer_sheets">
           <End Type="ZeroHP_DB.users" Role="users" Multiplicity="1" />
-          <End Type="ZeroHP_DB.player_sheets" Role="player_sheets" Multiplicity="0..1" />
+          <End Type="ZeroHP_DB.player_sheets" Role="player_sheets" Multiplicity="*" />
         </Association>
         <Association Name="gamesplayer_sheets">
-          <End Type="ZeroHP_DB.games" Role="games" Multiplicity="0..1" />
-          <End Type="ZeroHP_DB.player_sheets" Role="player_sheets" Multiplicity="0..1" />
+          <End Type="ZeroHP_DB.games" Role="games" Multiplicity="*" />
+          <End Type="ZeroHP_DB.player_sheets" Role="player_sheets" Multiplicity="*" />
         </Association>
         <Association Name="gamesmaps">
           <End Type="ZeroHP_DB.games" Role="games" Multiplicity="1" />
@@ -244,9 +259,25 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="usersgames">
-          <End Type="ZeroHP_DB.users" Role="users" Multiplicity="1" />
-          <End Type="ZeroHP_DB.games" Role="games" Multiplicity="0..1" />
+          <End Type="ZeroHP_DB.users" Multiplicity="1" Role="users" />
+          <End Type="ZeroHP_DB.games" Multiplicity="*" Role="games" />
         </Association>
+        <EntityType Name="database_firewall_rules">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="start_ip_address" />
+            <PropertyRef Name="end_ip_address" />
+            <PropertyRef Name="create_date" />
+            <PropertyRef Name="modify_date" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="start_ip_address" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="end_ip_address" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modify_date" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -299,15 +330,18 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="usersgames1" TypeName="ZeroHP_DB.usersgames1" StoreEntitySet="games">
-      <EndProperty Name="users">
-        <ScalarProperty Name="Id" ColumnName="players_Id" />
-      </EndProperty>
-      <EndProperty Name="games">
-        <ScalarProperty Name="Id" ColumnName="Id" />
-      </EndProperty>
-      <Condition ColumnName="players_Id" IsNull="false" />
-    </AssociationSetMapping>
+    <EntitySetMapping Name="database_firewall_rules">
+      <EntityTypeMapping TypeName="IsTypeOf(ZeroHP_DB.database_firewall_rules)">
+        <MappingFragment StoreEntitySet="database_firewall_rules">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="start_ip_address" ColumnName="start_ip_address" />
+          <ScalarProperty Name="end_ip_address" ColumnName="end_ip_address" />
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="modify_date" ColumnName="modify_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <AssociationSetMapping Name="usersplayer_sheets" TypeName="ZeroHP_DB.usersplayer_sheets" StoreEntitySet="player_sheets">
       <EndProperty Name="users">
         <ScalarProperty Name="Id" ColumnName="user_Id" />
@@ -316,14 +350,13 @@
         <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
     </AssociationSetMapping>
-    <AssociationSetMapping Name="gamesplayer_sheets" TypeName="ZeroHP_DB.gamesplayer_sheets" StoreEntitySet="player_sheets">
+    <AssociationSetMapping Name="gamesplayer_sheets" TypeName="ZeroHP_DB.gamesplayer_sheets" StoreEntitySet="gamesplayer_sheets">
       <EndProperty Name="games">
         <ScalarProperty Name="Id" ColumnName="games_Id" />
       </EndProperty>
       <EndProperty Name="player_sheets">
-        <ScalarProperty Name="Id" ColumnName="Id" />
+        <ScalarProperty Name="Id" ColumnName="player_sheets_Id" />
       </EndProperty>
-      <Condition ColumnName="games_Id" IsNull="false" />
     </AssociationSetMapping>
     <AssociationSetMapping Name="usersgames" TypeName="ZeroHP_DB.usersgames" StoreEntitySet="games">
       <EndProperty Name="users">

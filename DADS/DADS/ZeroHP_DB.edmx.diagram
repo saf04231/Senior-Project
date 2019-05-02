@@ -4,16 +4,16 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="d81866a409ce42278439687918211a1c" Name="Diagram1" ZoomLevel="63" >
+      <Diagram DiagramId="d81866a409ce42278439687918211a1c" Name="Diagram1" ZoomLevel="81" >
         <EntityTypeShape EntityType="ZeroHP_DB.users" Width="1.5" PointX="0.625" PointY="1.5" />
-        <EntityTypeShape EntityType="ZeroHP_DB.games" Width="1.5" PointX="3.375" PointY="0.5" />
-        <EntityTypeShape EntityType="ZeroHP_DB.player_sheets" Width="1.5" PointX="3.375" PointY="3.75" />
-        <EntityTypeShape EntityType="ZeroHP_DB.maps" Width="1.5" PointX="5.625" PointY="0.5" />
-        <AssociationConnector Association="ZeroHP_DB.usersgames1" />
+        <EntityTypeShape EntityType="ZeroHP_DB.games" Width="1.5" PointX="3.375" PointY="1.5" />
+        <EntityTypeShape EntityType="ZeroHP_DB.player_sheets" Width="1.5" PointX="3.375" PointY="4.375" />
+        <EntityTypeShape EntityType="ZeroHP_DB.maps" Width="1.5" PointX="5.625" PointY="1.5" />
         <AssociationConnector Association="ZeroHP_DB.usersplayer_sheets" />
         <AssociationConnector Association="ZeroHP_DB.gamesplayer_sheets" />
         <AssociationConnector Association="ZeroHP_DB.gamesmaps" />
         <AssociationConnector Association="ZeroHP_DB.usersgames" />
+        <EntityTypeShape EntityType="ZeroHP_DB.database_firewall_rules" Width="1.5" PointX="6.25" PointY="4.875" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

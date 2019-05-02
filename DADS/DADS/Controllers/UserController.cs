@@ -1,89 +1,167 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
 using System.Linq;
+using System.Net;
+using System.Security.Claims;
 using System.Web;
 using System.Web.Mvc;
+using DADS;
 
 namespace DADS.Controllers
 {
-    public class UserController : Controller
+    public class userController : Controller
     {
-        // GET: User
+        public static users LoggedInUser;
+        private ZeroHP_DBContainer db = new ZeroHP_DBContainer();
+
+        // GET: user
         public ActionResult Index()
         {
-            return View();
+            return View(db.users.ToList());
         }
 
-        // GET: User/Details/5
-        public ActionResult Details(int id)
+        // GET: user/Details/5
+        public ActionResult Details(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            users users = db.users.Find(id);
+            if (users == null)
+            {
+                return HttpNotFound();
+            }
+            return View(users);
         }
 
-        // GET: User/Create
+        // GET: user/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: User/Create
+        // POST: user/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create([Bind(Include = "Id,username,email,password")] users users)
+        {
+            if (ModelState.IsValid)
+            {
+                db.users.Add(users);
+                db.SaveChanges();
+                return RedirectToAction("../Home/Index");
+            }
+
+            return RedirectToAction("../Home/Index");
+        }
+
+        [HttpPost]
+        public ActionResult Login(users model)
         {
             try
             {
-                // TODO: Add insert logic here
+                users user = db.users.Where(u => u.email == model.email && u.password == model.password).Single();
 
+                if (user != null)
+                {
+                    var identity = new ClaimsIdentity(new[] {
+                        new Claim(ClaimTypes.Name, user.username),
+                        new Claim(ClaimTypes.Email, user.email)
+                    },
+                    "ApplicationCookie");
+
+                    var ctx = Request.GetOwinContext();
+                    var authManager = ctx.Authentication;
+
+                    authManager.SignIn(identity);
+                    System.Diagnostics.Debug.WriteLine("User is =" + user);
+                    LoggedInUser = user;
+                }
+            }
+            catch (Exception)
+            {
+                ViewBag.LoginError = "Username and/or Email is invalid.";
+            }
+            return RedirectToAction("Index", "Home");
+        }
+
+        public ActionResult LogOut()
+        {
+            var ctx = Request.GetOwinContext();
+            var authManager = ctx.Authentication;
+
+            authManager.SignOut("ApplicationCookie");
+            return RedirectToAction("Index", "Home");
+        }
+
+
+
+        // GET: user/Edit/5
+        public ActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            users users = db.users.Find(id);
+            if (users == null)
+            {
+                return HttpNotFound();
+            }
+            return View(users);
+        }
+
+        // POST: user/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        public ActionResult Edit([Bind(Include = "Id,username,email,password")] users users)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(users).State = EntityState.Modified;
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+            return View(users);
         }
 
-        // GET: User/Edit/5
-        public ActionResult Edit(int id)
+        // GET: user/Delete/5
+        public ActionResult Delete(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            users users = db.users.Find(id);
+            if (users == null)
+            {
+                return HttpNotFound();
+            }
+            return View(users);
         }
 
-        // POST: User/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        // POST: user/Delete/5
+        [HttpPost, ActionName("Delete")]
+        public ActionResult DeleteConfirmed(int id)
         {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index","Home");
-            }
-            catch
-            {
-                return View();
-            }
+            users users = db.users.Find(id);
+            db.users.Remove(users);
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
 
-        // GET: User/Delete/5
-        public ActionResult Delete(int id)
+        protected override void Dispose(bool disposing)
         {
-            return View();
-        }
-
-        // POST: User/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
+            if (disposing)
             {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
+                db.Dispose();
             }
-            catch
-            {
-                return View();
-            }
+            base.Dispose(disposing);
         }
     }
 }

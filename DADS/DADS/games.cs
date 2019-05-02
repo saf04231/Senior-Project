@@ -11,26 +11,35 @@ namespace DADS
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class games
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public games()
         {
+            this.player_sheets = new HashSet<player_sheets>();
             this.maps = new HashSet<maps>();
         }
     
         public int Id { get; set; }
-        [Required]
         public string name { get; set; }
-        [Required]
         public string description { get; set; }
     
-        public virtual users players { get; set; }
-        public virtual player_sheets player_sheets { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<player_sheets> player_sheets { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<maps> maps { get; set; }
-        public virtual users dm { get; set; }
+        private users _dm;
+        public virtual users dm {
+            get
+            {
+                return _dm;
+            }
+            set
+            {
+                _dm = Controllers.userController.LoggedInUser;
+                System.Diagnostics.Debug.WriteLine("DM is =" + _dm);
+            }
+        }
     }
 }
