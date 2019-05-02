@@ -168,8 +168,8 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\GameController.cs" />
     <Compile Include="Controllers\GameLobbyController.cs" />
-    <Compile Include="Controllers\gamesController.cs" />
     <Compile Include="Controllers\userController.cs" />
     <Compile Include="database_firewall_rules.cs">
       <DependentUpon>ZeroHP_DB.tt</DependentUpon>
