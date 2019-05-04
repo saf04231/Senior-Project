@@ -83,12 +83,29 @@ namespace DADS.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            games games = db.games.Find(id);
-            if (games == null)
+            games game = db.games.Find(id);
+            player_sheets player = game.player_sheets.Single();
+            if (game == null)
             {
                 return HttpNotFound();
             }
-            return View(games);
+            return View(game);
+        }
+
+        // GET: GameLobby/GameView/5
+        public ActionResult GameView(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            games game = db.games.Find(id);
+            player_sheets player = game.player_sheets.Single();
+            if (game == null)
+            {
+                return HttpNotFound();
+            }
+            return View(game);
         }
 
         // POST: GameLobby/Edit/5

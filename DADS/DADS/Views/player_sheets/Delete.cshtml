@@ -1,0 +1,271 @@
+﻿@model DADS.player_sheets
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>player_sheets</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.spells)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.spells)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.notes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.notes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.inventory)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.inventory)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.w1name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.w1name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.w1damage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.w1damage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.w1description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.w1description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.w1type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.w1type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.w2name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.w2name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.w2damage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.w2damage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.w2description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.w2description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.w2type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.w2type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.w3name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.w3name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.w3damage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.w3damage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.w3description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.w3description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.w3type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.w3type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.exp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.exp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.gp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.gp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.profBonus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.profBonus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.insp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.insp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.stre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.stre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dext)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dext)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cont)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cont)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.inte)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.inte)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.wisd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.wisd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.chari)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.chari)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.passWis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.passWis)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

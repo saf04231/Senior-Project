@@ -29,17 +29,6 @@ namespace DADS
         public virtual ICollection<player_sheets> player_sheets { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<maps> maps { get; set; }
-        private users _dm;
-        public virtual users dm {
-            get
-            {
-                return _dm;
-            }
-            set
-            {
-                _dm = Controllers.userController.LoggedInUser;
-                System.Diagnostics.Debug.WriteLine("DM is =" + _dm);
-            }
-        }
+        public virtual users dm { get; set; }
     }
 }

@@ -32,7 +32,7 @@
       <End Role="users" EntitySet="users" />
       <End Role="games" EntitySet="games" />
     </AssociationSet>
-    </EntityContainer>
+  </EntityContainer>
   <EntityType Name="users">
     <Key>
       <PropertyRef Name="Id" />
@@ -58,13 +58,35 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="name" Type="nvarchar(max)" Nullable="false" />
     <Property Name="description" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="stats" Type="nvarchar(max)" Nullable="false" />
     <Property Name="spells" Type="nvarchar(max)" Nullable="true" />
     <Property Name="notes" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="weapon1" Type="varchar" Nullable="true" MaxLength="3" />
-    <Property Name="weapon2" Type="varchar" Nullable="true" MaxLength="3" />
-    <Property Name="weapon3" Type="varchar" Nullable="true" MaxLength="3" />
-    <Property Name="statslist" Type="varchar" Nullable="false" MaxLength="3" />
+    <Property Name="inventory" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="w1name" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="w1damage" Type="int" Nullable="true" />
+    <Property Name="w1description" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="w1type" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="w2name" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="w2damage" Type="int" Nullable="true" />
+    <Property Name="w2description" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="w2type" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="w3name" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="w3damage" Type="int" Nullable="true" />
+    <Property Name="w3description" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="w3type" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="exp" Type="int" Nullable="true" />
+    <Property Name="cp" Type="int" Nullable="true" />
+    <Property Name="sp" Type="int" Nullable="true" />
+    <Property Name="gp" Type="int" Nullable="true" />
+    <Property Name="pp" Type="int" Nullable="true" />
+    <Property Name="profBonus" Type="int" Nullable="true" />
+    <Property Name="insp" Type="int" Nullable="true" />
+    <Property Name="stre" Type="int" Nullable="true" />
+    <Property Name="dext" Type="int" Nullable="true" />
+    <Property Name="cont" Type="int" Nullable="true" />
+    <Property Name="inte" Type="int" Nullable="true" />
+    <Property Name="wisd" Type="int" Nullable="true" />
+    <Property Name="chari" Type="int" Nullable="true" />
+    <Property Name="passWis" Type="int" Nullable="true" />
     <Property Name="user_Id" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="maps">
@@ -161,7 +183,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  </Schema></edmx:StorageModels>
+</Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="ZeroHP_DB" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
@@ -217,16 +239,38 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="description" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="stats" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="spells" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="notes" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="user" Relationship="ZeroHP_DB.usersplayer_sheets" FromRole="player_sheets" ToRole="users" />
           <NavigationProperty Name="games" Relationship="ZeroHP_DB.gamesplayer_sheets" FromRole="player_sheets" ToRole="games" />
-          <Property Name="weapon1" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
-          <Property Name="weapon2" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
-          <Property Name="weapon3" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
-          <Property Name="statslist" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
-        </EntityType>
+          <Property Name="inventory" Type="String" Nullable="true" />
+          <Property Name="w1name" Type="String" Nullable="true" />
+          <Property Name="w1damage" Type="Int32" Nullable="true" />
+          <Property Name="w1description" Type="String" Nullable="true" />
+          <Property Name="w1type" Type="String" Nullable="true" />
+          <Property Name="w2name" Type="String" Nullable="true" />
+          <Property Name="w2damage" Type="Int32" Nullable="true" />
+          <Property Name="w2description" Type="String" Nullable="true" />
+          <Property Name="w2type" Type="String" Nullable="true" />
+          <Property Name="w3name" Type="String" Nullable="true" />
+          <Property Name="w3damage" Type="Int32" Nullable="true" />
+          <Property Name="w3description" Type="String" Nullable="true" />
+          <Property Name="w3type" Type="String" Nullable="true" />
+          <Property Name="exp" Type="Int32" Nullable="true" />
+          <Property Name="cp" Type="Int32" Nullable="true" />
+          <Property Name="sp" Type="Int32" Nullable="true" />
+          <Property Name="gp" Type="Int32" Nullable="true" />
+          <Property Name="pp" Type="Int32" Nullable="true" />
+          <Property Name="profBonus" Type="Int32" Nullable="true" />
+          <Property Name="insp" Type="Int32" Nullable="true" />
+          <Property Name="stre" Type="Int32" Nullable="true" />
+          <Property Name="dext" Type="Int32" Nullable="true" />
+          <Property Name="cont" Type="Int32" Nullable="true" />
+          <Property Name="inte" Type="Int32" Nullable="true" />
+          <Property Name="wisd" Type="Int32" Nullable="true" />
+          <Property Name="chari" Type="Int32" Nullable="true" />
+          <Property Name="passWis" Type="Int32" Nullable="true" />
+          </EntityType>
         <EntityType Name="maps">
           <Key>
             <PropertyRef Name="Id" />
@@ -309,13 +353,35 @@
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="name" ColumnName="name" />
           <ScalarProperty Name="description" ColumnName="description" />
-          <ScalarProperty Name="stats" ColumnName="stats" />
           <ScalarProperty Name="spells" ColumnName="spells" />
           <ScalarProperty Name="notes" ColumnName="notes" />
-          <ScalarProperty Name="weapon1" ColumnName="weapon1" />
-          <ScalarProperty Name="weapon2" ColumnName="weapon2" />
-          <ScalarProperty Name="weapon3" ColumnName="weapon3" />
-          <ScalarProperty Name="statslist" ColumnName="statslist" />
+          <ScalarProperty Name="inventory" ColumnName="inventory" />
+          <ScalarProperty Name="w1name" ColumnName="w1name" />
+          <ScalarProperty Name="w1damage" ColumnName="w1damage" />
+          <ScalarProperty Name="w1description" ColumnName="w1description" />
+          <ScalarProperty Name="w1type" ColumnName="w1type" />
+          <ScalarProperty Name="w2name" ColumnName="w2name" />
+          <ScalarProperty Name="w2damage" ColumnName="w2damage" />
+          <ScalarProperty Name="w2description" ColumnName="w2description" />
+          <ScalarProperty Name="w2type" ColumnName="w2type" />
+          <ScalarProperty Name="w3name" ColumnName="w3name" />
+          <ScalarProperty Name="w3damage" ColumnName="w3damage" />
+          <ScalarProperty Name="w3description" ColumnName="w3description" />
+          <ScalarProperty Name="w3type" ColumnName="w3type" />
+          <ScalarProperty Name="exp" ColumnName="exp" />
+          <ScalarProperty Name="cp" ColumnName="cp" />
+          <ScalarProperty Name="sp" ColumnName="sp" />
+          <ScalarProperty Name="gp" ColumnName="gp" />
+          <ScalarProperty Name="pp" ColumnName="pp" />
+          <ScalarProperty Name="profBonus" ColumnName="profBonus" />
+          <ScalarProperty Name="insp" ColumnName="insp" />
+          <ScalarProperty Name="stre" ColumnName="stre" />
+          <ScalarProperty Name="dext" ColumnName="dext" />
+          <ScalarProperty Name="cont" ColumnName="cont" />
+          <ScalarProperty Name="inte" ColumnName="inte" />
+          <ScalarProperty Name="wisd" ColumnName="wisd" />
+          <ScalarProperty Name="chari" ColumnName="chari" />
+          <ScalarProperty Name="passWis" ColumnName="passWis" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

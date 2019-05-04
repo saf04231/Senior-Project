@@ -1,0 +1,214 @@
+﻿@model IEnumerable<DADS.player_sheets>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.spells)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.notes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.inventory)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.w1name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.w1damage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.w1description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.w1type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.w2name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.w2damage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.w2description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.w2type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.w3name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.w3damage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.w3description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.w3type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.exp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.gp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.pp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.profBonus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.insp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.stre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dext)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cont)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.inte)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.wisd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.chari)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.passWis)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.spells)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.notes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.inventory)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.w1name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.w1damage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.w1description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.w1type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.w2name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.w2damage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.w2description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.w2type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.w3name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.w3damage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.w3description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.w3type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.exp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.gp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.pp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.profBonus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.insp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.stre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dext)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cont)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.inte)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.wisd)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.chari)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.passWis)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

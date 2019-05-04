@@ -170,6 +170,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\GameController.cs" />
     <Compile Include="Controllers\GameLobbyController.cs" />
+    <Compile Include="Controllers\player_sheetsController.cs" />
     <Compile Include="Controllers\userController.cs" />
     <Compile Include="database_firewall_rules.cs">
       <DependentUpon>ZeroHP_DB.tt</DependentUpon>
@@ -177,7 +178,6 @@
     <Compile Include="Startup.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\mapsController.cs" />
-    <Compile Include="Controllers\player_sheetsController.cs" />
     <Compile Include="Controllers\SettingsController.cs" />
     <Compile Include="games.cs">
       <DependentUpon>ZeroHP_DB.tt</DependentUpon>
@@ -293,7 +293,7 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Game\GameView.cshtml" />
+    <Content Include="Views\GameLobby\GameView.cshtml" />
     <Content Include="Views\Game\_Actors.cshtml" />
     <Content Include="Views\Game\_Chat.cshtml" />
     <Content Include="Views\Settings\Index.cshtml" />
@@ -315,13 +315,6 @@
     <Content Include="ZeroHP_DB.edmx.diagram">
       <DependentUpon>ZeroHP_DB.edmx</DependentUpon>
     </Content>
-    <Content Include="Views\player_sheets\Edit.cshtml" />
-    <Content Include="Views\player_sheets\Create.cshtml" />
-    <Content Include="Views\games\Create.cshtml" />
-    <Content Include="Views\games\Delete.cshtml" />
-    <Content Include="Views\games\Details.cshtml" />
-    <Content Include="Views\games\Edit.cshtml" />
-    <Content Include="Views\games\Index.cshtml" />
     <Content Include="Views\User\Create.cshtml" />
     <Content Include="Views\User\Delete.cshtml" />
     <Content Include="Views\User\Details.cshtml" />
@@ -332,6 +325,12 @@
     <Content Include="Views\GameLobby\Details.cshtml" />
     <Content Include="Views\GameLobby\Edit.cshtml" />
     <Content Include="Views\GameLobby\Index.cshtml" />
+    <Content Include="Views\GameLobby\_Edit.cshtml" />
+    <Content Include="Views\player_sheets\Index.cshtml" />
+    <Content Include="Views\player_sheets\Create.cshtml" />
+    <Content Include="Views\player_sheets\Edit.cshtml" />
+    <Content Include="Views\player_sheets\Delete.cshtml" />
+    <Content Include="Views\player_sheets\_Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

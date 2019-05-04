@@ -37,23 +37,24 @@ namespace DADS.Controllers
             return View(player_sheets);
         }
 
-        //// GET: player_sheets/Create
-        //public ActionResult Create()
-        //{
-        //    ViewBag.Id = new SelectList(db.items, "Id", "name");
-        //    return View();
-        //}
+        // GET: player_sheets/Create
+        public ActionResult Create()
+        {
+            return View();
+        }
 
         // POST: player_sheets/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        public async Task<ActionResult> Create([Bind(Include = "Id,name,description,stats,spells,notes")] player_sheets player_sheets)
+        public ActionResult Create([Bind(Include = "Id,name,description,stats,spells,notes")] player_sheets player_sheets)
         {
             if (ModelState.IsValid)
             {
+                //games game = db.games.Where(g => g.Id == id).Single();
+                //player_sheets.games.Add(game);
                 db.player_sheets.Add(player_sheets);
-                await db.SaveChangesAsync();
+                db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
 
@@ -80,7 +81,6 @@ namespace DADS.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public async Task<ActionResult> Edit([Bind(Include = "Id,name,description,stats,spells,notes")] player_sheets player_sheets)
         {
             if (ModelState.IsValid)

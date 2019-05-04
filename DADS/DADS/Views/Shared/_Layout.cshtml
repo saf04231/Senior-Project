@@ -24,7 +24,7 @@
                 @if (User.Identity.IsAuthenticated)
                 {
                     <li class="nav-item">@Html.ActionLink("Games List", "Index", "GameLobby", null, new { @class = "nav-link" })</li>
-                    <li class="nav-item">@Html.ActionLink("Game", "GameView", "Game", null, new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("Game", "GameView", "GameLobby", null, new { @class = "nav-link" })</li>
                     <li class="nav-item, nav-link">@User.Identity.Name</li>
                     <li class="nav-item">@Html.ActionLink("Logout","Logout","user", null, new { @class = "nav-link" })</li>
                 }

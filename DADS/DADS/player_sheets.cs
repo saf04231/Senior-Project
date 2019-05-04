@@ -23,13 +23,35 @@ namespace DADS
         public int Id { get; set; }
         public string name { get; set; }
         public string description { get; set; }
-        public string stats { get; set; }
         public string spells { get; set; }
         public string notes { get; set; }
-        public string weapon1 { get; set; }
-        public string weapon2 { get; set; }
-        public string weapon3 { get; set; }
-        public string statslist { get; set; }
+        public string inventory { get; set; }
+        public string w1name { get; set; }
+        public Nullable<int> w1damage { get; set; }
+        public string w1description { get; set; }
+        public string w1type { get; set; }
+        public string w2name { get; set; }
+        public Nullable<int> w2damage { get; set; }
+        public string w2description { get; set; }
+        public string w2type { get; set; }
+        public string w3name { get; set; }
+        public Nullable<int> w3damage { get; set; }
+        public string w3description { get; set; }
+        public string w3type { get; set; }
+        public Nullable<int> exp { get; set; }
+        public Nullable<int> cp { get; set; }
+        public Nullable<int> sp { get; set; }
+        public Nullable<int> gp { get; set; }
+        public Nullable<int> pp { get; set; }
+        public Nullable<int> profBonus { get; set; }
+        public Nullable<int> insp { get; set; }
+        public Nullable<int> stre { get; set; }
+        public Nullable<int> dext { get; set; }
+        public Nullable<int> cont { get; set; }
+        public Nullable<int> inte { get; set; }
+        public Nullable<int> wisd { get; set; }
+        public Nullable<int> chari { get; set; }
+        public Nullable<int> passWis { get; set; }
     
         public virtual users user { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
