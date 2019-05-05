@@ -101,13 +101,13 @@ namespace DADS.Controllers
 
 
         // GET: user/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit()
         {
-            if (id == null)
+            if(LoggedInUser == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                LoggedInUser = db.users.Where(u => u.username == User.Identity.Name).Single();
             }
-            users users = db.users.Find(id);
+            users users = db.users.Find(LoggedInUser.Id);
             if (users == null)
             {
                 return HttpNotFound();
@@ -152,7 +152,7 @@ namespace DADS.Controllers
             users users = db.users.Find(id);
             db.users.Remove(users);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return LogOut();
         }
 
         protected override void Dispose(bool disposing)
