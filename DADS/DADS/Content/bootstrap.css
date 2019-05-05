@@ -1,5 +1,5 @@
 .main-body {
-    background-color: #C0C0C0;
+    background-image: linear-gradient(#f6f6f6, #d6e4f0 99%);
     margin: 10px;
     padding: 20px
 }
@@ -28,17 +28,22 @@ input {
 }
 
 .custom-background {
-    background-color: #888888;
+    background-color: #;
 }
 
 
-/*!
+.nav-item a:hover{
+    background-color: #264e86;
+}
+
+
+    /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-:root {
+    :root {
     --blue: #007bff;
     --indigo: #6610f2;
     --purple: #6f42c1;
