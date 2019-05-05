@@ -10,30 +10,25 @@
 namespace DADS
 {
     using System;
-    using System.Collections;
     using System.Collections.Generic;
-
-    public partial class users : IEnumerable<games>
+    
+    public partial class users
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public users()
+        {
+            this.player_sheets = new HashSet<player_sheets>();
+            this.game = new HashSet<games>();
+        }
+    
         public int Id { get; set; }
         public string username { get; set; }
         public string email { get; set; }
         public string password { get; set; }
     
-        public virtual games gameList { get; set; }
-        public virtual player_sheets player_sheets { get; set; }
-        public virtual games game { get; set; }
-
-        IEnumerator<games> IEnumerable<games>.GetEnumerator()
-        {
-            throw new NotImplementedException();
-        }
-
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            throw new NotImplementedException();
-        }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<player_sheets> player_sheets { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<games> game { get; set; }
     }
-
-
 }

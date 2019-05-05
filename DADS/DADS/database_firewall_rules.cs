@@ -12,14 +12,13 @@ namespace DADS
     using System;
     using System.Collections.Generic;
     
-    public partial class items
+    public partial class database_firewall_rules
     {
-        public int Id { get; set; }
+        public int id { get; set; }
         public string name { get; set; }
-        public string damage { get; set; }
-        public string description { get; set; }
-        public string types { get; set; }
-    
-        public virtual player_sheets player_sheet { get; set; }
+        public string start_ip_address { get; set; }
+        public string end_ip_address { get; set; }
+        public System.DateTime create_date { get; set; }
+        public System.DateTime modify_date { get; set; }
     }
 }

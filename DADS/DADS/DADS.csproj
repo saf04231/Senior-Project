@@ -81,8 +81,14 @@
     <Reference Include="Microsoft.Owin, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.4.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Owin.Security, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.Security.4.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.4.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -163,22 +169,21 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\GameController.cs" />
-    <Compile Include="Controllers\gamesController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\itemsController.cs" />
-    <Compile Include="Controllers\mapsController.cs" />
+    <Compile Include="Controllers\GameLobbyController.cs" />
     <Compile Include="Controllers\player_sheetsController.cs" />
+    <Compile Include="Controllers\userController.cs" />
+    <Compile Include="database_firewall_rules.cs">
+      <DependentUpon>ZeroHP_DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Startup.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\mapsController.cs" />
     <Compile Include="Controllers\SettingsController.cs" />
-    <Compile Include="Controllers\UserController.cs" />
-    <Compile Include="Controllers\usersController.cs" />
     <Compile Include="games.cs">
       <DependentUpon>ZeroHP_DB.tt</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="items.cs">
-      <DependentUpon>ZeroHP_DB.tt</DependentUpon>
     </Compile>
     <Compile Include="maps.cs">
       <DependentUpon>ZeroHP_DB.tt</DependentUpon>
@@ -288,13 +293,10 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Game\GameView.cshtml" />
+    <Content Include="Views\GameLobby\GameView.cshtml" />
     <Content Include="Views\Game\_Actors.cshtml" />
     <Content Include="Views\Game\_Chat.cshtml" />
     <Content Include="Views\Settings\Index.cshtml" />
-    <Content Include="Views\User\NewCharacter.cshtml" />
-    <Content Include="Views\User\NewGame.cshtml" />
-    <Content Include="Views\User\User.cshtml" />
     <Content Include="Views\Game\_CharacterSheet.cshtml" />
     <Content Include="Views\Game\_Map.cshtml" />
     <Content Include="Scripts\umd\popper.min.js.map" />
@@ -313,20 +315,30 @@
     <Content Include="ZeroHP_DB.edmx.diagram">
       <DependentUpon>ZeroHP_DB.edmx</DependentUpon>
     </Content>
-    <Content Include="Views\users\Create.cshtml" />
-    <Content Include="Views\users\Delete.cshtml" />
-    <Content Include="Views\users\Details.cshtml" />
-    <Content Include="Views\users\Edit.cshtml" />
-    <Content Include="Views\users\Index.cshtml" />
+    <Content Include="Views\User\Create.cshtml" />
+    <Content Include="Views\User\Delete.cshtml" />
+    <Content Include="Views\User\Details.cshtml" />
+    <Content Include="Views\User\Edit.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\GameLobby\Create.cshtml" />
+    <Content Include="Views\GameLobby\Delete.cshtml" />
+    <Content Include="Views\GameLobby\Details.cshtml" />
+    <Content Include="Views\GameLobby\Edit.cshtml" />
+    <Content Include="Views\GameLobby\Index.cshtml" />
+    <Content Include="Views\GameLobby\_Edit.cshtml" />
+    <Content Include="Views\player_sheets\Index.cshtml" />
+    <Content Include="Views\player_sheets\Create.cshtml" />
+    <Content Include="Views\player_sheets\Edit.cshtml" />
+    <Content Include="Views\player_sheets\Delete.cshtml" />
+    <Content Include="Views\player_sheets\_Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
     <Folder Include="Views\DMGamesViewComponent\" />
-    <Folder Include="Views\games\" />
     <Folder Include="Views\items\" />
+    <Folder Include="Views\Login\" />
     <Folder Include="Views\maps\" />
-    <Folder Include="Views\player_sheets\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.min.css.map" />

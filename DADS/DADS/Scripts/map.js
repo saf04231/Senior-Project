@@ -7,8 +7,11 @@ var clickY = new Array();
 var clickDrag = new Array();
 var paint;
 
-canvas.setAttribute("height", 600);
-canvas.setAttribute("width", 800);
+var map_ar_height = window.innerHeight;
+var map_ar_width = window.innerWidth/2;
+
+canvas.setAttribute("height", map_ar_height);
+canvas.setAttribute("width", map_ar_width);
 canvas.setAttribute('id', "canvas");
 canvas.setAttribute('style', "position:absolute;z-index:1");
 canvas.style.cursor = 'crosshair';
@@ -21,8 +24,8 @@ ctx = canvas.getContext("2d");
 /* create bottom layer canvas */
 var btm_canvas = document.createElement("canvas")
 
-btm_canvas.setAttribute('height', 600);
-btm_canvas.setAttribute('width', 800);
+btm_canvas.setAttribute('height', map_ar_height);
+btm_canvas.setAttribute('width', map_ar_width);
 btm_canvas.setAttribute('z-index', -1);
 btm_canvas.setAttribute('style', "background-color:lightgray;z-index:0");
 btm_canvas.setAttribute('id', "btm_canvas");

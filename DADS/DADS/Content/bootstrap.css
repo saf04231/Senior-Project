@@ -4,6 +4,11 @@
     padding: 20px
 }
 
+.custom-label {
+    padding-bottom: 10px;
+    padding-left: 15px;
+}
+
 .login, .sign-up {
     margin-right: 5px;
     display: block;

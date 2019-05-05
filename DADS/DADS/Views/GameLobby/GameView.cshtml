@@ -1,8 +1,10 @@
+@model DADS.games
+
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div class="row">
-    <div class="col" style="overflow:scroll">
+    <div class="col">
         <div id="mapArea" style="position:relative;">
             <div class="btn-toolbar" role="toolbar" aria-label="Map controls." style="position:absolute;top:5px;left:5px;z-index:2">
                 <div class="input-group">
@@ -10,10 +12,11 @@
                         Change map
                         <input type="file" id="chngMapBtn" />
                     </span>
+                    <!--
                     <span class="btn btn-light btn-file">
                         Add actors
-                        <input type="file"/>
-                    </span>
+                        <input type="file" />
+                    </span> -->
                 </div>
                 <div class="btn-group">
                     <button type="button" class="btn btn-light" id="eraseBtn">Erase</button>
@@ -26,22 +29,21 @@
 
     <div class="col">
         <ul class="nav nav-tabs bg-light nav-justified" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link" href="#gamePanel" data-toggle="tab" role="tab">Game</a>
+            </li>
             <li class="nav-item active">
                 <a class="nav-link" href="#characterSheetPanel" data-toggle="tab" role="tab">Character Sheet</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#chatPanel" data-toggle="tab" role="tab">Chat</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#actorPanel" data-toggle="tab" role="tab">Actors</a>
             </li>
         </ul>
 
         <div class="tab-content" id="tabContent">
-            <div class="tab-pane fade show active" id="characterSheetPanel" role="tabpanel" aria-labelledby="cs-tab">Character Sheet</div>
-            <div class="tab-pane fade" id="actorPanel" role="tabpanel" aria-labelledby="actor-tab">Actors</div>
-            <div class="tab-pane fade" id="chatPanel" role="tabpanel" aria-labelledby="chat-tab">Chat</div>
+            <div class="tab-pane fade" id="gamePanel" role="tabpanel" aria-labelledby="game-tab">
+                @Html.Partial("_Edit")
+            </div>
+            <div class="tab-pane fade show active" id="characterSheetPanel" role="tabpanel" aria-labelledby="cs-tab">
+                @Html.Partial("../player_sheets/_Edit", Model.player_sheets.First())
+            </div>
         </div>
     </div>
 </div>
-
