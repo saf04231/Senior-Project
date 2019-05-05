@@ -5,7 +5,6 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <!--<title>@ViewBag.Title - The Free Online Tabletop Simulator</title>-->
     <title>Zero HP</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
@@ -20,7 +19,7 @@
         <div class="navbar-collapse collapse" id="navbarSupportedContent">
             <ul class="nav navbar-nav mr-auto">
                 <li class="nav-item">@Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link" })</li>
-                <li class="nav-item"><a href="https://github.com/saf04231/Senior-Project/wiki#welcome-to-the-zerohp-wiki" class="nav-link">Wiki</a></li>
+                <li class="nav-item"><a href="https://github.com/saf04231/Senior-Project/wiki#welcome-to-the-zerohp-wiki" class="nav-link" target="_blank">Wiki</a></li>
                 @if (User.Identity.IsAuthenticated)
                 {
                     <li class="nav-item">@Html.ActionLink("Games List", "Index", "GameLobby", null, new { @class = "nav-link" })</li>

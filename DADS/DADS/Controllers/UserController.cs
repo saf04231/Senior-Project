@@ -53,7 +53,7 @@ namespace DADS.Controllers
             {
                 db.users.Add(users);
                 db.SaveChanges();
-                return RedirectToAction("../Home/Index");
+                Login(users);
             }
 
             return RedirectToAction("../Home/Index");
