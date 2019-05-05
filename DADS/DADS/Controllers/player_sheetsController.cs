@@ -55,7 +55,7 @@ namespace DADS.Controllers
                 //player_sheets.games.Add(game);
                 db.player_sheets.Add(player_sheets);
                 db.SaveChangesAsync();
-                return RedirectToAction("Index");
+                return RedirectToAction("../GamesLobby/Index");
             }
 
             return View("../GamesLobby/Index");
