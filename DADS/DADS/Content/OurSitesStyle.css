@@ -1,0 +1,13 @@
+﻿.main-body {
+    background-color: #C0C0C0;
+    margin: 10px;
+    padding: 20px
+}
+.login, .sign-up {
+    float: left;
+    margin-right: 5px;
+    display: block;
+    background-color: #7852A9;
+    padding: 5px 5px 5px 5px;
+    color: whitesmoke;
+}

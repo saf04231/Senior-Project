@@ -1,31 +1,87 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿@model DADS.users
+
+@{
+    ViewBag.Title = "0HP Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+<div class="main-body">
+    <div class="row">
+        <div class="col-md-9">
+            <h3>Welcome to ZeroHP, the free online tabletop simulator!</h3>
+            <p></p>
+            <h5>What is ZeroHP?</h5>
+            <p>
+                ZeroHP is your companion when it comes to keeping track of your tabletop RPG’s! ZeroHP is a free-to-use site that was created by four Vermont Tech college students for their senior project.
+                Our goal was to provide players with an easy and intuitive way to begin enjoying tabletop RPGs online.
+            </p>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+            <h5>How Do I Get Started?</h5>
+            <p></p>
+            <p>For a walkthrough of the site, take a look at our <a href="https://github.com/saf04231/Senior-Project/wiki#welcome-to-the-zerohp-wiki" target="_blank">wiki</a>!</p>
+
+            <h5>Who can I contact?</h5>
+            <p>
+                Whether you have a random question or wish to report a bug, our devs can be reached at <a href="mailto: zerohp.devs@gmail.com">zerohp.devs@gmail.com</a>.
+            </p>
+        </div>
+
+        @if (!User.Identity.IsAuthenticated)
+        {
+            <div class="col-md-3">
+                @using (Html.BeginForm("Login", "user", FormMethod.Post))
+                {
+                    <div class="login">
+                        <h3>Login!</h3>
+                        @*<small id="welcomeBack" class="text-muted">Welcome back!</small>*@
+                        <div class="form-group">
+                            @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control", id = "email", placeholder = "Email" } })
+                        </div>
+                        <div class="form-group">
+                            @Html.EditorFor(model => model.password, new { htmlAttributes = new { @class = "form-control", id = "password", placeholder = "Password" } })
+                        </div>
+                        <div class="error">
+                            @ViewBag.LoginError
+                        </div>
+                        <div class="form-group">
+                            @*@Html.ActionLink("Submit", "Login", new { id = "loginSubmit" }, new { @class = "btn btn-primary" })*@
+                            <input type="submit" value="Submit" class="btn btn-primary" id="loginSubmit" />
+                        </div>
+                    </div>
+                }
+                <hr />
+                @using (Html.BeginForm("Create", "user", FormMethod.Post))
+                {
+                    <div class="sign-up">
+                        <h3>Sign Up!</h3>
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group">
+                            @*<small id="usernameHelp" class="form-text text-muted">What is your name, traveller?</small>*@
+                            @Html.EditorFor(model => model.username, new { htmlAttributes = new { @class = "form-control", id = "newUsername", placeholder = "Username" } })
+                            @Html.ValidationMessageFor(model => model.username, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group">
+                            @*<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>*@
+                            @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control", id = "newEmail", placeholder = "Email" } })
+                            @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group">
+                            @Html.EditorFor(model => model.password, new { htmlAttributes = new { @class = "form-control", id = "newPassword", placeholder = "Password" } })
+                            @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group">
+                            @Html.EditorFor(model => model.password, new { htmlAttributes = new { @class = "form-control", id = "confNewPassword", placeholder = "Confirm Password" } })
+                            @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="agreeToTerms">
+                            <label class="form-check-label" for="agreeToTerms">I agree to the terms of use.</label>
+                        </div>
+                        @*@Html.ActionLink("Submit", "SignUp", new { id = "signupSubmit" }, new { @class = "btn btn-primary" })*@
+                        <input type="submit" value="Submit" class="btn btn-primary" id="loginSubmit" />
+                    </div>
+                }
+            </div>
+        }
     </div>
 </div>
