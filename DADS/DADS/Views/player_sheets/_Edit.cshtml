@@ -62,35 +62,32 @@
 
         <div class="form-group">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-3">
                     <div class="custom-label">Copper Pieces</div>
                     @Html.EditorFor(model => model.cp, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.cp, "", new { @class = "text-danger" })
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-3">
                     <div class="custom-label">Silver Pieces</div>
                     @Html.EditorFor(model => model.sp, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.sp, "", new { @class = "text-danger" })
                 </div>
-        </div>
-    </div>
-                <div class="form-group">
-                    <div class="row">
-                    <div class="col-md-6">
-                        <div class="custom-label">Gold Pieces</div>
-                        @Html.EditorFor(model => model.gp, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.gp, "", new { @class = "text-danger" })
-                    </div>
-               
-                
-                    
-                    <div class="col-md-6">
-                        <div class="custom-label">Platinum Pieces</div>
-                        @Html.EditorFor(model => model.pp, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.pp, "", new { @class = "text-danger" })
-                    </div>
+
+                <div class="col-md-3">
+                    <div class="custom-label">Gold Pieces</div>
+                    @Html.EditorFor(model => model.gp, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.gp, "", new { @class = "text-danger" })
                 </div>
+
+                <div class="col-md-3">
+                    <div class="custom-label">Platinum Pieces</div>
+                    @Html.EditorFor(model => model.pp, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.pp, "", new { @class = "text-danger" })
+                </div>
+
             </div>
+    </div>
+              
         </div>
             @****************************************************************************************************************@
             @****************************************************************************************************************@
@@ -103,17 +100,24 @@
 
                 <div class="form-group">
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="custom-label">Proficiency Bonus</div>
                             @Html.EditorFor(model => model.profBonus, new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(model => model.profBonus, "", new { @class = "text-danger" })
                         </div>
 
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="custom-label">Inspiration</div>
                             @Html.EditorFor(model => model.insp, new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(model => model.insp, "", new { @class = "text-danger" })
                         </div>
+
+                        <div class="col-md-4">
+                            <div class="custom-label">Strength</div>
+                            @Html.EditorFor(model => model.insp, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.insp, "", new { @class = "text-danger" })
+                        </div>
+
                     </div>
                 </div>
 
@@ -122,61 +126,50 @@
                 <div class="form-group">
                     
                     <div class="row">
-                        <div class="col-md-6">
-                            <div class="custom-label">Strength</div>
-                            @Html.EditorFor(model => model.insp, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.insp, "", new { @class = "text-danger" })
-                        </div>
-                        
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="custom-label">Dexterity</div>
                             @Html.EditorFor(model => model.dext, new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(model => model.dext, "", new { @class = "text-danger" })
                         </div>
 
-                    </div>
-                </div>
-              
-        
-
-                <div class="form-group">
-                    <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="custom-label">Constitution</div>
                             @Html.EditorFor(model => model.cont, new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(model => model.cont, "", new { @class = "text-danger" })
                         </div>
-                        <div class="col-md-6">
-                             <div class="custom-label">Intelligence</div>
-                        @Html.EditorFor(model => model.inte, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.inte, "", new { @class = "text-danger" })
-                         </div>
-                     </div>
-                </div>
 
+                        <div class="col-md-4">
+                            <div class="custom-label">Intelligence</div>
+                            @Html.EditorFor(model => model.inte, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.inte, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+              
                 <div class="form-group">
                     <div class="row">
 
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="custom-label">Wisdom</div>
                             @Html.EditorFor(model => model.wisd, new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(model => model.wisd, "", new { @class = "text-danger" })
                         </div>
-                        <div class="col-md-6">
+
+                        <div class="col-md-4">
                             <div class="custom-label">Charisma</div>
                             @Html.EditorFor(model => model.chari, new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(model => model.chari, "", new { @class = "text-danger" })
                         </div>
+
+                        <div class="col-md-4">
+                            <div class="custom-label">Passive Wisdom</div>
+                            @Html.EditorFor(model => model.passWis, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.passWis, "", new { @class = "text-danger" })
+                        </div>
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <div class="custom-label">Passive Wisdom</div>
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.passWis, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.passWis, "", new { @class = "text-danger" })
-                    </div>
-                </div>
+              
             </div>
 
             @****************************************************************************************************************@
@@ -220,87 +213,87 @@
                 </div>
 
                 <div class="form-group">
-                    <div class="custom-label">Weapon 2: Name</div>
-                    <div class="col-md-10">
+                    <div class="row">
+                    <div class="col-md-6">
+                        <div class="custom-label">Weapon 2: Name</div>
                         @Html.EditorFor(model => model.w2name, new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.w2name, "", new { @class = "text-danger" })
                     </div>
-                </div>
-
-                <div class="form-group">
-                    <div class="custom-label">Weapon 2: Damage</div>
-                    <div class="col-md-10">
+                
+                    <div class="col-md-6">
+                        <div class="custom-label">Weapon 2: Damage</div>
                         @Html.EditorFor(model => model.w2damage, new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.w2damage, "", new { @class = "text-danger" })
                     </div>
+                    </div>
                 </div>
 
                 <div class="form-group">
-                    <div class="custom-label">Weapon 2: Description</div>
-                    <div class="col-md-10">
+                    <div class="row">
+                    <div class="col-md-6">
+                        <div class="custom-label">Weapon 2: Description</div>
                         @Html.EditorFor(model => model.w2description, new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.w2description, "", new { @class = "text-danger" })
                     </div>
-                </div>
-
-                <div class="form-group">
-                    <div class="custom-label">Weapon 2: Type</div>
-                    <div class="col-md-10">
+               
+                    <div class="col-md-6">
+                        <div class="custom-label">Weapon 2: Type</div>
                         @Html.EditorFor(model => model.w2type, new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.w2type, "", new { @class = "text-danger" })
                     </div>
-                </div>
-
-                <div class="form-group">
-                    <div class="custom-label">Weapon 3: Name</div>
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.w3name, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.w3name, "", new { @class = "text-danger" })
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <div class="custom-label">Weapon 3: Damage</div>
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.w3damage, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.w3damage, "", new { @class = "text-danger" })
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="custom-label">Weapon 3: Name</div>
+                            @Html.EditorFor(model => model.w3name, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.w3name, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="custom-label">Weapon 3: Damage</div>
+                            @Html.EditorFor(model => model.w3damage, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.w3damage, "", new { @class = "text-danger" })
+                        </div>
                     </div>
                 </div>
 
+
                 <div class="form-group">
-                    <div class="custom-label">Weapon 3: Description</div>
-                    <div class="col-md-10">
+                    <div class="row">
+                    <div class="col-md-6">
+                        <div class="custom-label">Weapon 3: Description</div>
                         @Html.EditorFor(model => model.w3description, new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.w3description, "", new { @class = "text-danger" })
                     </div>
-                </div>
 
-                <div class="form-group">
-                    <div class="custom-label">Weapon 3: Type</div>
-                    <div class="col-md-10">
+                    <div class="col-md-6">
+                        <div class="custom-label">Weapon 3: Type</div>
                         @Html.EditorFor(model => model.w3type, new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.w3type, "", new { @class = "text-danger" })
                     </div>
                 </div>
-
-                <div class="form-group">
-                    <div class="custom-label">Spells</div>
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.spells, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.spells, "", new { @class = "text-danger" })
-                    </div>
                 </div>
 
-
-
                 <div class="form-group">
-                    <div class="custom-label">Inventory</div>
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.inventory, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.inventory, "", new { @class = "text-danger" })
-                    </div>
+                    <div class="row">
+                    
+                        <div class="col-md-6">
+                            <div class="custom-label">Spells</div>
+                            @Html.EditorFor(model => model.spells, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.spells, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="custom-label">Inventory</div>
+                            @Html.EditorFor(model => model.inventory, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.inventory, "", new { @class = "text-danger" })
+                        </div>
                 </div>
             </div>
+                </div> 
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
                     <input type="submit" value="Save Changes" class="btn btn-primary" />
@@ -310,7 +303,9 @@
         }
 
         <div>
-            @Html.ActionLink("Back to List", "Index")
+            
+                @Html.ActionLink("Back to List", "Index")
+            
         </div>
 
     </div>
