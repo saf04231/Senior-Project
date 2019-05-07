@@ -1,7 +1,13 @@
 .main-body {
-    background-image: linear-gradient(#f6f6f6, #d6e4f0 99%);
+    /* background-image: linear-gradient(#f6f6f6, #d6e4f0 99%); */
+    background-color: #C0C0C0;
     margin: 10px;
     padding: 20px
+}
+
+.main-body2 {
+    /* background-image: linear-gradient(#f6f6f6, #d6e4f0 99%); */
+    background-color: #C0C0C0;
 }
 
 .custom-label {
@@ -13,7 +19,7 @@
     margin-right: 5px;
     display: block;
     color: whitesmoke;
-    background-color: #343a40;
+    background-color: #264e86;
     border-radius: 10px;
 }
 
@@ -33,18 +39,17 @@ input {
 }
 
 .custom-background {
+    background-color: #888888;
+}
+
+
+.nav-item a:hover {
     background-color: #;
 }
 
 
-.nav-item a:hover{
-    background-color: #264e86;
-}
-
-
-.form-group  {
+.form-group {
     display: block;
- 
 }
 
 .custom-label {
@@ -52,13 +57,13 @@ input {
 }
 
 
-    /*!
+/*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-    :root {
+:root {
     --blue: #007bff;
     --indigo: #6610f2;
     --purple: #6f42c1;
@@ -478,6 +483,7 @@ hr {
     margin-bottom: 1rem;
     border: 0;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
+    /* background-color: black; */
 }
 
 small,
@@ -4785,7 +4791,7 @@ input[type="button"].btn-block {
     }
 
 .navbar-dark .navbar-nav .nav-link {
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 2.5);
 }
 
     .navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link:focus {
@@ -6884,7 +6890,7 @@ button.bg-light:focus {
 }
 
 .bg-dark {
-    background-color: #343a40 !important;
+    background-color: #0074e4 !important;
 }
 
 a.bg-dark:hover, a.bg-dark:focus,
