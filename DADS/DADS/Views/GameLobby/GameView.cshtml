@@ -28,21 +28,23 @@
     <script type="text/javascript" src="~/Scripts/map.js"></script>
 
     <div class="col">
-        <ul class="nav nav-tabs bg-light nav-justified" role="tablist">
-            <li class="nav-item">
-                <a class="nav-link" href="#gamePanel" data-toggle="tab" role="tab">Game</a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="#characterSheetPanel" data-toggle="tab" role="tab">Character Sheet</a>
-            </li>
-        </ul>
+        <div class="main-body2">
+            <ul class="nav nav-tabs bg-light nav-justified" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link" href="#gamePanel" data-toggle="tab" role="tab">Game</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#characterSheetPanel" data-toggle="tab" role="tab">Character Sheet</a>
+                </li>
+            </ul>
 
-        <div class="tab-content" id="tabContent">
-            <div class="tab-pane fade" id="gamePanel" role="tabpanel" aria-labelledby="game-tab">
-                @Html.Partial("_Edit")
-            </div>
-            <div class="tab-pane fade show active" id="characterSheetPanel" role="tabpanel" aria-labelledby="cs-tab">
-                @Html.Partial("../player_sheets/_Edit", Model.player_sheets.First())
+            <div class="tab-content" id="tabContent">
+                <div class="tab-pane fade" id="gamePanel" role="tabpanel" aria-labelledby="game-tab">
+                    @Html.Partial("_Edit")
+                </div>
+                <div class="tab-pane fade show active" id="characterSheetPanel" role="tabpanel" aria-labelledby="cs-tab">
+                    @Html.Partial("../player_sheets/_Edit", Model.player_sheets.First())
+                </div>
             </div>
         </div>
     </div>

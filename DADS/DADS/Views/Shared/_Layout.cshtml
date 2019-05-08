@@ -1,18 +1,15 @@
-﻿@*@{ users loggedinUser = ("IsLoggedIn","") }*@
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en-gb">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <!--<title>@ViewBag.Title - The Free Online Tabletop Simulator</title>-->
     <title>Zero HP</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
 </head>
 <body style="padding-top:0" class="custom-background">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: #373D3D !important;">
         @Html.ActionLink("ZeroHP", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -20,13 +17,12 @@
         <div class="navbar-collapse collapse" id="navbarSupportedContent">
             <ul class="nav navbar-nav mr-auto">
                 <li class="nav-item">@Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link" })</li>
-                <li class="nav-item"><a href="https://github.com/saf04231/Senior-Project/wiki#welcome-to-the-zerohp-wiki" class="nav-link">Wiki</a></li>
+                <li class="nav-item"><a href="https://github.com/saf04231/Senior-Project/wiki#welcome-to-the-zerohp-wiki" class="nav-link" target="_blank">Wiki</a></li>
                 @if (User.Identity.IsAuthenticated)
                 {
                     <li class="nav-item">@Html.ActionLink("Games List", "Index", "GameLobby", null, new { @class = "nav-link" })</li>
-                    <li class="nav-item">@Html.ActionLink("Game", "GameView", "GameLobby", null, new { @class = "nav-link" })</li>
-                    <li class="nav-item, nav-link">@User.Identity.Name</li>
-                    <li class="nav-item">@Html.ActionLink("Logout","Logout","user", null, new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink(User.Identity.Name, "Edit", "user", null, new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("Logout", "Logout", "user", null, new { @class = "nav-link" })</li>
                 }
             </ul>
         </div>
