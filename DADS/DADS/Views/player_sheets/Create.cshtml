@@ -12,7 +12,7 @@
         <div class="form-horizontal">
 
             <div>
-                <h2>General Info</h2>
+                <h2>New Player Sheet</h2>
 
                 <hr />
 
@@ -64,24 +64,24 @@
                 <div class="form-group">
                     <div class="row">
                         <div class="col-md-3">
-                            <div class="custom-label">Copper Pieces</div>
+                            <div class="custom-label">Copper</div>
                             @Html.EditorFor(model => model.cp, new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(model => model.cp, "", new { @class = "text-danger" })
                         </div>
                         <div class="col-md-3">
-                            <div class="custom-label">Silver Pieces</div>
+                            <div class="custom-label">Silver</div>
                             @Html.EditorFor(model => model.sp, new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(model => model.sp, "", new { @class = "text-danger" })
                         </div>
 
                         <div class="col-md-3">
-                            <div class="custom-label">Gold Pieces</div>
+                            <div class="custom-label">Gold</div>
                             @Html.EditorFor(model => model.gp, new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(model => model.gp, "", new { @class = "text-danger" })
                         </div>
 
                         <div class="col-md-3">
-                            <div class="custom-label">Platinum Pieces</div>
+                            <div class="custom-label">Platinum</div>
                             @Html.EditorFor(model => model.pp, new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(model => model.pp, "", new { @class = "text-danger" })
                         </div>
