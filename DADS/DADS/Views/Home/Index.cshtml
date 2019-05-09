@@ -9,19 +9,21 @@
     <div class="row">
         @if (User.Identity.IsAuthenticated)
         {
-        <div class="col-md-9">
-            <h3>Welcome Back to ZeroHP!</h3>
-            <p></p>
-            <h5>Want to get started?!</h5>
-            <p>
-                If you would like to create a new game, please click on Games list. From there you can click on create game or continue playing a game you’ve already set up!
-            </p>
+            <div class="col-md-9">
+                <h3>Welcome Back to ZeroHP!</h3>
+                <p></p>
+                <h5>Want to get started?</h5>
+                <p>
+                    If you would like to create a new game, please click on Games list. <br />
+                    From there you can click on create game or continue playing a game you’ve already set up!
+                    There is also the option to add a new character to a game that has already been created. 
+                </p>
 
-            <h5> Need help?!</h5>
-            <p>Don't hesitate to reach out to us at <a href="mailto: zerohp.devs@gmail.com">zerohp.devs@gmail.com</a> if you have any questions! Or feel free to take a look at our <a href="https://github.com/saf04231/Senior-Project/wiki#welcome-to-the-zerohp-wiki" target="_blank">wiki</a>!</p>  
+                <h5>Need help?</h5>
+                <p>Don't hesitate to reach out to us at <a href="mailto: zerohp.devs@gmail.com">zerohp.devs@gmail.com</a> if you have any questions! Or feel free to take a look at our <a href="https://github.com/saf04231/Senior-Project/wiki#welcome-to-the-zerohp-wiki" target="_blank">wiki</a>!</p>  
             
              
-        </div>
+            </div>
         }
         @if (!User.Identity.IsAuthenticated)
         {
@@ -30,12 +32,17 @@
                 <p></p>
                 <h5>What is ZeroHP?</h5>
                 <p>
-                    ZeroHP is your companion when it comes to keeping track of your tabletop RPG’s! ZeroHP is a free-to-use site that was created by four Vermont Tech college students for their senior project.
-                    Our goal was to provide players with an easy and intuitive way to begin enjoying tabletop RPGs online.
+                    ZeroHP is your companion when it comes to keeping track of your tabletop RPG’s! <br />
+                    ZeroHP is a free-to-use site that stores your campaigns notes, maps, and character sheets in one easy to find place.<br />
+                    This site was created by four Vermont Tech college students with the goal
+                    to provide players with an easy and intuitive way to begin enjoying tabletop RPGs online.
                 </p>
 
                 <h5>How Do I Get Started?</h5>
-                <p></p>
+                <p>
+                    To start, either log-in or make an account off to the right. 
+                    From there, you can go into the Games List to see all of your games, make a new one, or make a character. 
+                </p>
                 <p>For a walkthrough of the site, take a look at our <a href="https://github.com/saf04231/Senior-Project/wiki#welcome-to-the-zerohp-wiki" target="_blank">wiki</a>!</p>
 
                 <h5>Who can I contact?</h5>
