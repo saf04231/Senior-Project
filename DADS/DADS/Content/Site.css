@@ -21,3 +21,61 @@ select,
 textarea {
     /* max-width: 280px; */
 }
+
+.main-body {
+    /* background-image: linear-gradient(#f6f6f6, #d6e4f0 99%); */
+    background-color: #C0C0C0;
+    margin: 10px;
+    padding: 20px
+}
+
+.main-body2 {
+    /* background-image: linear-gradient(#f6f6f6, #d6e4f0 99%); */
+    background-color: #C0C0C0;
+}
+
+.custom-label {
+    padding-bottom: 10px;
+    padding-left: 15px;
+}
+
+.login, .sign-up {
+    margin-right: 5px;
+    display: block;
+    color: whitesmoke;
+    background-color: #373D3D;
+    border-radius: 10px;
+}
+
+.login {
+    padding: 5px 5px 5px 5px;
+}
+
+
+.sign-up {
+    padding: 5px 5px 5px 5px;
+}
+
+
+input {
+    /* width: 250px; */
+    padding: 25px;
+}
+
+.custom-background {
+    background-color: #888888;
+}
+
+
+.nav-item a:hover {
+    background-color: #;
+}
+
+
+.form-group {
+    display: block;
+}
+
+.custom-label {
+    padding: 7px;
+}
